@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<License Developer="GuangZhou Soofound Software Corporation">
+	<CustomerDetails>
+		<Property Name="ProductID" Value="SF008" />
+		<Property Name="Vendor" Value="广州市虹联信息技术有限公司" />
+		<Property Name="Customer" Value="深圳前海壹互联科技投资有限公司" />
+		<Property Name="MachineID" Value="soofac-afbw-j+ly" />
+		<Property Name="LicenseType" Value="Registered" />
+		<Property Name="GenerationDate" Value="2015-03-01" />
+		<Property Name="ExpiryDate" Value="2020-01-01" />
+	</CustomerDetails>
+	<ProductDetails>
+		<Property Name="ProductName" Value="SooFac" />
+		<Property Name="ProductType" Value="Standard" />
+		<Property Name="Version" Value="3.5.0.beta" />
+		<Property Name="ReleaseDate" Value="2015-02-20" />
+		<Property Name="DeviceNumber" Value="1000" />
+		<Property Name="Boot" Value="/project/ehulian/boot.xml" />
+	</ProductDetails>
+	<Code>de5d5d59bd9d4d470d2c66bdb945f6c7f3ee5c1b04818fbe1c7018d8dea9935a64f1ecb0ea6fde621e93053f3b613b48a4e40e9a7b488cd631693148acaee5d3f12dde8bc605dff8634518c03c19383a25cce768688febf7a2c1a2ad3a4595e1ac53f17c6b8233b2389b4d594356a5e4b955317916661560643cf952ca15b59582b306d5cc2c6933</Code>
+</License>

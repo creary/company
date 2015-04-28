@@ -1,0 +1,36 @@
+@charset "utf-8";
+/**
+ * rlx_mti_homepage : center page style for homepage, with open style.
+ */
+
+.rlx_mti_centered_page_open .rlx_mti_homepage .page_wrapper{
+	padding-bottom:2em;
+	border-bottom:solid 2px #ccc;
+}
+.rlx_mti_homepage .page_header{
+	
+}
+.rlx_mti_homepage .page_header .rlx_mti_l_side{
+	width:308px;
+}
+
+/**
+ * perf_panels: 
+ */
+.perf_panels{}
+.perf_panels .group_sel{
+	width:100%;
+}
+.perf_panels .panel_group{
+	margin-top:.5em;
+	display:none;
+}
+
+.elements_group_detail{
+	padding-top:5px;
+	list-style:none;
+}
+.elements_group_detail li{
+	float:left;
+	width:60px;
+}

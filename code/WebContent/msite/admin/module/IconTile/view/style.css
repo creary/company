@@ -1,0 +1,32 @@
+@charset "utf-8";
+.soof_tiles{
+	padding-bottom:1%;
+	background-color:#666;
+}
+.soof_tiles .tile{
+	float:left;
+	display:block;
+	height:105px;
+	width:32%;
+	margin:1% 0 0 1%;
+	text-decoration:none;
+}
+.soof_tiles .col2{
+	width:65%;
+}
+.soof_tiles .col3{
+	width:98%;
+}
+.soof_tiles .tile .icon{
+	margin:9px auto;
+	width:64px;
+	height:64px;
+	overflow:hidden;
+	background:center no-repeat;
+}
+.soof_tiles .tile .text{
+	text-align:center;
+	color:#fff;
+	font-weight:bold;
+}
+

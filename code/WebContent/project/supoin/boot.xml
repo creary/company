@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<boot>
+	<mainPage>/project/supoin/main.jsp</mainPage>
+	<favicon>/resources/image/default/icon/wifi_favicon.ico</favicon>
+	<logo1>/resources/project/supoin/logo_titled.jpg</logo1>
+	<logo2>/resources/project/supoin/logo_white_titled.png</logo2>
+	<product>智能无线云AP运营平台管理系统</product>
+	<vendor>深圳市销邦信息科技有限公司</vendor>
+	<copyRight>深圳市销邦信息科技有限公司 版权所有 2007-2014 All rights reserved.</copyRight>
+</boot>

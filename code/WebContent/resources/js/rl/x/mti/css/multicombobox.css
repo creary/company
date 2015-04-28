@@ -1,0 +1,68 @@
+@CHARSET "UTF-8";
+.mck_checkbox{
+	width:15px;
+	margin-left: 2px;
+	margin-top: 2px;
+	margin-right: 2px;
+}
+.mck_cked{
+	width:100%;
+	display:block;
+	line-height: 16px;
+	background-color:highlight;
+	color:highlighttext;
+}
+.mck_nock{
+	width:100%;
+	display:block;
+	line-height: 16px;
+}
+.mck_inputDiv {
+	background:url("../image/default/mix/multicombobox_1.jpg");
+	background-repeat:no-repeat;
+	background-position:right;
+	border:solid 1px #7F9DB9;
+	height: 19px;
+	margin: 0px;
+	padding: 0px;
+}
+.mck_inputDiv_over {
+	background:url("../image/default/mix/multicombobox_2.jpg");
+	background-repeat:no-repeat;
+	background-position:right;
+	border:solid 1px #7F9DB9;
+	height: 19px;
+	margin: 0px;
+	padding: 0px;
+}
+.mck_input{
+	BORDER-RIGHT: medium none;
+	BORDER-TOP: medium none;
+	BORDER-LEFT: medium none;
+	BORDER-BOTTOM: medium none;
+	TEXT-DECORATION: none;
+	margin: 1px;
+	padding: 0px;
+	height: 18px;
+	position: absolute;
+}
+.mck_selectDiv{
+	display:none;
+	max-height:250px;
+	-height:200px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: absolute;
+	border: 1px solid #7F9DB9;
+	background-color: white;
+	z-index: 1001;
+	font-weight: normal;
+	color: #000;
+}
+.mck_iframe{
+	height: 1px;
+	-height: 200px;
+	position: absolute;
+	display: none;
+	z-index: 1000;
+}

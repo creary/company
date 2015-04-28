@@ -1,0 +1,39 @@
+一、大数据实用工具之redis使用-2
+
+1、redis特别说明
+   1.1、32位版最大可使用内存为4G，实际要少于该值。
+        故生产环节均采用64位的。
+   1.2、配置文件加载
+        不加配置文件均是采用默认，
+	必须加配置文件才可生效，与一般的系统不太相同。
+	格式如：redis_server.exe redis.conf
+
+2、使用详解
+   2.1 常用操作
+       服务启动
+       修改服务端口
+       链接指定ip和port
+       口令认证
+
+   2.2 数据结构(均是泛kv结构,此处的数据结构实际是指value的数据结构)
+       string: 最常见格式,不解释
+       list: 双向链表
+       set: hashtable实现,无序(插入不等于遍历序或者说是实际存储前后位置)
+       zset: set+skip list(跳表)
+          zset是典型的key,zkey,zscore顺序。
+       hashmap: map结构,主要用于解决复杂对象拆分成多个属性来存储的问题
+            比如一本书的各种属性，包括书名，作者，价格，内容，主题，前言等等内容，
+           hashmap的结构为：key,hkey,hvalue
+   2.3 自带redis-cli客户端实现
+       string: set,get
+       list: rpush,lpush,rpop,lpop,llen,lrange
+       set: sadd,srem,scard,sismember,smembers
+       zset: zadd,zrem,zcard,zcount,zscore
+       hashmap: hset,hget,hdel,mset,mget
+
+   2.4 通过java api之jedis来实现
+       string: 见项目源代码
+       list:见项目源代码
+       set:见项目源代码
+       zset:见项目源代码
+       hashmap:见项目源代码

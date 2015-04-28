@@ -1,0 +1,6 @@
+/**
+ * @fileOverview DataBinding class.
+ * @change
+ 	#1 by prcjack @2014/11/22 Creates file.
+ */
+orderjs.define("app.deco.DataBinding",["open.jquery.jquery","app.deco.engine"],function(){var t=orderjs("open.jquery.jquery"),e=orderjs("app.deco.engine"),r=rl.createClass({parent:e.DecoratorBase,construct:function(){rl.isPrototyping(arguments[0])||r.parent.apply(this,arguments)},members:{dataAttr:"data-field",emptyContent:"",fieldSelector:void 0,renderers:null,initTarget:function(){return rl.isNonNullStr(this.fieldSelector)||(this.fieldSelector="["+this.dataAttr+"]"),this.parse(),this},parse:function(){return this.fieldsJq=this.jq.find(this.fieldSelector),this},readVal:function(t,e){return e[t]},update:function(e){if(!rl.isObject(e))throw new Error(this+" update(): Invalid data: "+e);var r=this,n=this.renderers||{};return this.fieldsJq.each(function(){var i=t(this).attr(r.dataAttr),a=r.readVal(i,e),s=n[i];s&&(a=s(a)),t(this).html(rl.isEmpty(a)?r.emptyContent:a)}),this},toString:function(){return"[object DataBinding]"}}});return e.makeJqDeco(r)});

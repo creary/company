@@ -1,0 +1,64 @@
+2015-04-27 13:24:45 - ERROR - *** Spring Major version '3' expected, but you are running with version: 4.0.0.M2. Please check your classpath for unwanted jar files.
+2015-04-27 13:24:46 - ERROR - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'SpringContextAware' defined in ServletContext resource [/WEB-INF/config/applicationContext.xml]: Initialization of bean failed; nested exception is java.lang.IllegalStateException: 试用版已过期,设备ID=qnh8-twou-acto-tjbd
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:644)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:493)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:389)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:294)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4728)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5162)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1069)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1719)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: 试用版已过期,设备ID=qnh8-twou-acto-tjbd
+	at com.soofound.framework.license.LicenseTool.checkLicense(LicenseTool.java:169)
+	at com.soofound.framework.util.SysConfigHelper.setApplicationContext(SysConfigHelper.java:39)
+	at com.soofound.framework.util.SpringContextAware.setApplicationContext(SpringContextAware.java:15)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.invokeAwareInterfaces(ApplicationContextAwareProcessor.java:119)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:94)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:407)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1499)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	... 24 more
+2015-04-27 13:29:03 - ERROR - *** Spring Major version '3' expected, but you are running with version: 4.0.0.M2. Please check your classpath for unwanted jar files.
+2015-04-27 13:29:03 - INFO - ====soofac Starting===
+2015-04-27 13:29:07 - INFO - New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version.
+2015-04-27 13:35:44 - ERROR - *** Spring Major version '3' expected, but you are running with version: 4.0.0.M2. Please check your classpath for unwanted jar files.
+2015-04-27 13:35:44 - INFO - ====soofac Starting===
+2015-04-27 13:35:47 - INFO - New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version.
+2015-04-27 13:37:03 - ERROR - org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [delete surfing_session from session_id='18027587918155406-9q6oqy'; delete surfing_session_history from session_id='18027587918155406-9q6oqy'; delete surfing_session from session_id='18027587448996897-tpjxax'; delete surfing_session_history from session_id='18027587448996897-tpjxax'; delete surfing_session from session_id='18027548670318402-cruora'; delete surfing_session_history from session_id='18027548670318402-cruora'; delete surfing_session from session_id='18027024107317067-60712z'; delete surfing_session_history from session_id='18027024107317067-60712z'; delete surfing_session from session_id='18026865476118004-lxzvp3'; delete surfing_session_history from session_id='18026865476118004-lxzvp3'; delete surfing_session from session_id='18026763995703393-d44e8h'; delete surfing_session_history from session_id='18026763995703393-d44e8h']; nested exception is java.sql.BatchUpdateException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''18026763995703393-d44e8h'' at line 1
+2015-04-27 13:37:56 - ERROR - *** Spring Major version '3' expected, but you are running with version: 4.0.0.M2. Please check your classpath for unwanted jar files.
+2015-04-27 13:37:56 - INFO - ====soofac Starting===
+2015-04-27 13:37:59 - INFO - New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version.
+2015-04-27 13:38:16 - ERROR - org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [delete surfing_session from where session_id='18027587918155406-9q6oqy'; delete surfing_session_history from where session_id='18027587918155406-9q6oqy'; delete surfing_session from where session_id='18027587448996897-tpjxax'; delete surfing_session_history from where session_id='18027587448996897-tpjxax'; delete surfing_session from where session_id='18027548670318402-cruora'; delete surfing_session_history from where session_id='18027548670318402-cruora'; delete surfing_session from where session_id='18027024107317067-60712z'; delete surfing_session_history from where session_id='18027024107317067-60712z'; delete surfing_session from where session_id='18026865476118004-lxzvp3'; delete surfing_session_history from where session_id='18026865476118004-lxzvp3'; delete surfing_session from where session_id='18026763995703393-d44e8h'; delete surfing_session_history from where session_id='18026763995703393-d44e8h']; nested exception is java.sql.BatchUpdateException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where session_id='18026763995703393-d44e8h'' at line 1
+2015-04-27 13:38:50 - ERROR - *** Spring Major version '3' expected, but you are running with version: 4.0.0.M2. Please check your classpath for unwanted jar files.
+2015-04-27 13:38:51 - INFO - ====soofac Starting===
+2015-04-27 13:38:53 - INFO - New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version.
+2015-04-27 13:41:10 - ERROR - *** Spring Major version '3' expected, but you are running with version: 4.0.0.M2. Please check your classpath for unwanted jar files.
+2015-04-27 13:41:11 - INFO - ====soofac Starting===
+2015-04-27 13:41:13 - INFO - New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version.
+2015-04-27 15:13:04 - ERROR - *** Spring Major version '3' expected, but you are running with version: 4.0.0.M2. Please check your classpath for unwanted jar files.
+2015-04-27 15:13:04 - INFO - ====soofac Starting===
+2015-04-27 15:13:07 - INFO - New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version.
+2015-04-27 15:38:00 - ERROR - *** Spring Major version '3' expected, but you are running with version: 4.0.0.M2. Please check your classpath for unwanted jar files.
+2015-04-27 15:38:00 - INFO - ====soofac Starting===
+2015-04-27 15:38:03 - INFO - New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version.
+2015-04-27 16:18:41 - ERROR - *** Spring Major version '3' expected, but you are running with version: 4.0.0.M2. Please check your classpath for unwanted jar files.
+2015-04-27 16:18:42 - INFO - ====soofac Starting===
+2015-04-27 16:18:44 - INFO - New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version.

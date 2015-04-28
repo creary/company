@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<boot>
+	<mainPage>/project/kenon/main.jsp</mainPage>
+	<favicon>/resources/image/default/icon/wifi_favicon.ico</favicon>
+	<logo1>/resources/project/cdkn/logo_unicom_titled.jpg</logo1>
+	<logo2>/resources/project/cdkn/logo_unicom_titled_trans.png</logo2>
+	<product>智能无线运营平台</product>
+	<vendor>成都开能科技发展有限公司</vendor>
+	<copyRight></copyRight>
+</boot>

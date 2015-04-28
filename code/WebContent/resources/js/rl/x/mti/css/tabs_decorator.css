@@ -1,0 +1,62 @@
+@charset "utf-8";
+/*
+Simple tab panel component
+*/
+
+.rlx_mti_tabs{
+	width:100%;
+}
+.rlx_mti_tabs .rlx_mti_tabbar{
+	float:left;
+	clear:both;
+	width:100%;
+	border-bottom:solid 1px #ddd;
+}
+.rlx_mti_tabs .rlx_mti_tabbar ul, .rlx_mti_tabbar li{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.rlx_mti_tabs .rlx_mti_tabbar ul{
+	margin-left:12px;
+}
+.rlx_mti_tabs .rlx_mti_tabbar .rlx_mti_tab{
+	cursor:pointer;
+	float:left;
+	margin:0 3px;
+	padding:3px 5px;
+	height:16px;
+	line-height:18px;
+}
+.rlx_mti_tabs .rlx_mti_tabbar .active{
+	background-color:#eee;
+	border:solid 1px #ddd;
+	border-bottom:none;
+	padding:2px 4px;
+	padding-bottom:3px;
+}
+.rlx_mti_tabs .rlx_mti_tabbar .x_btn{
+	float:right;
+	margin-left:10px;
+}
+
+.rlx_mti_tabs .rlx_mti_tab_stack{
+	clear:both;
+}
+.rlx_mti_tabs .rlx_mti_tab_stack .rlx_mti_tab_body{
+	display:none;
+}
+.rlx_mti_tabs .rlx_mti_tab_stack .active{
+	display:block;
+}
+
+.rlx_mti_tabs_blue .rlx_mti_tabbar{
+	background-color:#D8EAF8;
+	border-bottom:solid 1px #C0DBFD;
+}
+.rlx_mti_tabs_blue .rlx_mti_tabbar .active{
+	background-color:#E7F2FB;
+	border:solid 1px #C0DBFD;
+	border-bottom:none;
+}
+

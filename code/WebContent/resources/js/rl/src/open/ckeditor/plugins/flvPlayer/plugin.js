@@ -1,0 +1,1 @@
+CKEDITOR.plugins.add("flvPlayer",{init:function(a){var l="flvPlayer";a.ui.addButton("flvPlayer",{label:"插入Flv视频",command:l}),CKEDITOR.dialog.add(l,this.path+"dialogs/flvPlayer.js"),a.addCommand(l,new CKEDITOR.dialogCommand(l))}});

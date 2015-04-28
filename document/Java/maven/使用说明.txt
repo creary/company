@@ -1,0 +1,45 @@
+my-app
+|-- pom.xml
+`-- src
+    |-- main
+    |   |-- java
+    |   |   `-- com
+    |   |       `-- mycompany
+    |   |           `-- app
+    |   |               `-- App.java
+    |   `-- resources
+    |       `-- META-INF
+    |           `-- application.properties
+    `-- test
+        `-- java
+            `-- com
+                `-- mycompany
+                    `-- app
+                        `-- AppTest.java
+
+三个元素定义了一个项目基本的坐标:
+groupId 定义了项目属于哪个组，这个组往往和项目所在的组织或公司存在关联。譬如在googlecode上建立了一个名为myapp的项目，那么groupId就应该是com.googlecode.myapp
+artifactId 定义了当前Maven项目在组织中唯一的ID, 可以理解为项目中的模块, 模块为Maven中最小单位构件
+version 项目的版本
+
+编译： compile
+在cmd中，将目录切换到my-app-simple下，执行mvn clean compile
+build success之后我们会在my-app-simple下看到新增了一个target目录，该目录下存放项目编译后的文件，如.class文件
+ 
+清理： clean
+cmd目录my-app-simple下执行命令 mvn clean
+会将target文件删除，即清理项目，该命令可以结合其他命令运行
+ 
+测试: test
+cmd目录my-app-simple下执行命令 mvn test
+会执行src/test/java 下的Junit 测试代码
+
+打包: package
+cmd目录my-app-simple下执行命令 mvn package
+会将项目打成jar包，并放在target目录中
+执行此命令之前会先执行编译和测试命令
+ 
+安装：install 
+cmd目录my-app-simple下执行命令 mvn install
+会将项目jar包安装到本地仓库中，以便其他项目使用
+执行此命令之前会先执行编译，测试，打包命令 

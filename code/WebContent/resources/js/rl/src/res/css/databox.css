@@ -1,0 +1,241 @@
+@charset "utf-8";
+/**
+ * @fileOverview style for comp panel and data view.
+ *  The comp panel is formed of caption and dataView comp.
+ *  This style contains panel look style and panel layout style.
+ * @version 1.0.0
+ * @change
+*/
+/*
+rl.provide("databox");
+*/
+.rl_databox_comp_panel .main_wrapper{
+	width:100%;
+	/* prevent content overflow */
+	table-layout:fixed;
+}
+/**
+ * p_tip: panel tip
+ */
+.rl_databox_comp_panel .p_tip_pos_wrapper{
+	position:relative;
+	width:100%;
+}
+.rl_databox_comp_panel .p_tip_wrapper{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+}
+.rl_databox_comp_panel .p_tip_shim{
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-color:#fff;
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
+.rl_databox_comp_panel .p_tip{
+	position:absolute;
+	top:40%;
+	width:100%;
+	text-align:center;
+}
+.rl_databox_comp_panel .p_caption{
+	height:22px;
+	line-height:22px;
+}
+/*
+ * caption_left, caption_right, caption_center, defines caption position.
+ */
+.rl_databox_comp_panel .caption_left{
+	text-align:left;
+}
+.rl_databox_comp_panel .caption_right{
+	text-align:right;
+}
+.rl_databox_comp_panel .caption_center{
+	text-align:center;
+}
+.rl_databox_comp_panel .comp_ctn{
+	height:100%;
+}
+
+/**
+ * rl_databox_collapsible_panel : style for rl.dataBox.CollapsiblePanel.
+ */
+.rl_databox_collapsible_panel{
+}
+.rl_databox_collapsible_panel .indicator_icon{
+	float:right;
+	background:url(../image/default/common/collapse_arrows.gif) top center no-repeat;
+	width:19px;
+	height:19px;
+	border:0 none;
+}
+.rl_databox_collapsible_panel_expanded .indicator_icon{
+	background-position:0 0;
+}
+.rl_databox_collapsible_panel_collapsed .indicator_icon{
+	background-position:0 -19px;
+}
+.rl_databox_collapsible_panel .header{
+	height:30px;
+}
+.rl_databox_collapsible_panel .header_mouseover{
+	background-color:#f2f2f2;
+}
+.rl_databox_collapsible_panel .main_wrapper{
+	border-bottom:solid 1px #eee;
+}
+.rl_databox_collapsible_panel .comp_ctn{
+	padding:1em 0;
+}
+
+/** data view styles */
+
+/**
+ * node_detail : style for rl.dataBox.KpiViewNodeDetail.
+ */
+.rl_databox_node_detail{
+}
+.rl_databox_node_detail .title{
+	text-align:center;
+}
+.rl_databox_node_detail .title_left{
+	text-align:left;
+}
+.rl_databox_node_detail .title_center{
+	text-align:center;
+}
+.rl_databox_node_detail .title_right{
+	text-align:right;
+}
+.rl_databox_node_detail .l_summary{
+	width:100%;
+}
+.rl_databox_node_detail .thumbnail_ctn{
+	width:100px;
+	text-align:center;
+	vertical-align:middle;
+}
+.rl_databox_node_detail .thumbnail_autowidth{
+	width:auto;
+}
+.rl_databox_node_detail .thumbnail_xwidth_100{
+	width:100px;
+}
+.rl_databox_node_detail .thumbnail_xwidth_60{
+	width:60px;
+}
+.rl_databox_node_detail .thumbnail_top{
+	vertical-align:top;
+}
+.rl_databox_node_detail .thumbnail_middle{
+	vertical-align:middle;
+}
+.rl_databox_node_detail .thumbnail_bottom{
+	vertical-align:bottom;
+}
+.rl_databox_node_detail .thumbnail_ctn .overlay_icon{
+	position:relative;
+	left:-25%;
+	top:-12px; 
+}
+.rl_databox_node_detail .thumbnail_ctn .text{
+	/*position:relative;
+	top:-12px;*/
+}
+.rl_databox_node_detail .summary_ctn{
+	
+}
+.rl_databox_node_detail .more_link{
+	text-align:right;
+}
+.rl_databox_node_detail .more_link_left{
+	text-align:left;
+    word-break: break-all;
+}
+.rl_databox_node_detail .more_link_center{
+	text-align:center;
+}
+.rl_databox_node_detail .more_link_right{
+	text-align:right;
+}
+/**
+ * rl_databox_node_icon: for rl.dataBox.KpiViewNodeIcon, a simple KpiViewNodeDetail view.
+ */
+.rl_databox_node_icon{
+	float:left;
+	width:180px;
+	margin:0 2em 1em 0;
+	padding:10px 0;
+}
+.rl_databox_elements_group_icon{
+	float:left;
+	width:250px;
+	margin:0 2em 1em 0;
+	padding:10px 0;
+	border:solid 1px #ccc;
+	border-radius:5px;
+	background-color:#fff;
+}
+.rl_databox_node_icon .summary_ctn,
+.rl_databox_elements_group_icon .summary_ctn{
+	color:#999;
+}
+.rl_databox_elements_group_icon_selected{
+	border:1px solid #7DA2CE;
+	background-color:#EEF5FD;
+}
+
+/**
+ * rl_databox_link_list : style for rl.dataBox.KpiViewLinkList.
+ */
+.rl_databox_link_list{
+	overflow:hidden;
+	margin:.5em 0;
+}
+.rl_databox_link_list .links_ctn{
+	list-style:none;
+}
+.rl_databox_link_list .links_ctn li{
+	padding:5px 0;
+}
+
+/* pieces style*/
+/**
+ * rl_databox_sep_line_h
+ */
+.rl_databox_panel_sep_line_h{
+	margin-top:2em; 
+	height:1em;
+	border-top:dashed 1px #ccc;
+}
+
+/**
+ * rl_databox_data_list: for list data table.
+ * rl_databox_field_list: for fields data table.
+ */
+.rl_databox_data_list,
+.rl_databox_field_list {
+	width:100%;
+	table-layout:fixed\9;
+}
+.rl_databox_data_list th.label,
+.rl_databox_data_list td.data_ctn,
+.rl_databox_field_list th.label,
+.rl_databox_field_list td.field_ctn{
+	border-bottom:solid 1px #eee;
+	padding:8px;
+	text-align:left;
+}
+.rl_databox_data_list th.label,
+.rl_databox_field_list th.label{
+	background-color:#f2f2f2;
+	font-weight:normal;
+}
+.rl_databox_field_list th.label{
+	width:118px;
+	border-top:solid 1px #fff;
+}

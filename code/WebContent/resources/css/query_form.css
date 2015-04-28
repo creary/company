@@ -1,0 +1,31 @@
+@charset "utf-8";
+/*
+sv_query_form
+@for query form
+*/
+.sv_query_form{
+	width:500px;
+	display:none;
+}
+.sv_query_form .t,
+.sv_query_form .s{
+	width:150px;
+}
+table.fields_layout{
+	width:100%;
+	line-height:25px;
+}
+table.fields_layout th{
+	font-weight:lighter;
+	text-align:right;
+	padding-right:5px;
+}
+table.fields_layout .checkbox_list_ctn{
+	border:solid 1px #eee;
+	height:80px;
+	line-height:16px;
+	overflow:auto;
+}
+table.fields_layout .checkbox_list_ctn input{
+	margin-right:5px ;
+}

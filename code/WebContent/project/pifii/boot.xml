@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<boot>
+	<mainPage>/common/main.jsp</mainPage>
+	<favicon>/resources/image/default/icon/wifi_favicon.ico</favicon>
+	<logo1>/resources/project/pifii/logo_titled.jpg</logo1>
+	<logo2>/resources/project/pifii/logo_titled_trans.png</logo2>
+	<product>智能无线云AP运营平台管理系统</product>
+	<vendor>广州派联信息科技有限公司</vendor>
+	<copyRight>广州派联信息科技有限公司 版权所有</copyRight>
+</boot>

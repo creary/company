@@ -1,0 +1,280 @@
+@charset "utf-8";
+/**
+ * info page is formed of title and groups,
+ * and each group always be formed of header and body.
+ * Its content min width is 820px, included 50px margin and 770px content width;
+ */
+/**
+ * gradual bg of body.
+ */
+.sv_gradual_bg{
+	background:#fff url(../image/default/mix/page_gradual_bg.jpg) no-repeat 0 0;
+}
+.sv_info {
+	margin:30px 0 50px 25px;
+	font-size:12px;
+}
+.sv_info a {
+	text-decoration:none;
+	color:#06C;/*#28417A #06C*/
+}
+.sv_info a:hover {
+	color:#F90;
+}
+/**
+ * @name content
+ * define detail content width
+ */
+.sv_info .limit_width {
+	width:770px;
+}
+.sv_info .indent {
+	margin-left:2em;
+}
+.sv_info h3.title {
+	font-size:16px;
+	color:#28417A;
+	text-align:left;
+}
+.sv_info .top_bar {
+	position:absolute;
+	top:5px;
+	height:25px;
+	text-align:right;
+}
+.sv_info .top_bar a{
+	color:#28417A;
+}
+.sv_info .top_bar a:hover{
+	color:#F90;
+}
+.sv_info .top_bar .sep{
+	border-right:solid 1px #ccc;
+	margin:0 12px 0 6px;
+}
+.sv_info .side_btns {
+	float:right;
+}
+.sv_info .side_btns button{
+	height:20px;
+}
+.sv_info a.icon_btn{
+	line-height:16px;
+}
+.sv_info a.icon_btn *{
+	vertical-align:middle;
+}
+.sv_info a.icon_btn img{
+	width:16px;
+	height:16px;
+}
+.sv_info .group {
+	margin-top:30px;
+}
+.sv_info .group legend{
+	*margin-left:-7px;/*for ie<8*/
+	color:#000;
+}
+.sv_info .group fieldset.wrapper {
+	display:block;
+	border:none;
+	border-top:solid 1px #CCC;
+}
+.sv_info .group .g_bar{
+	margin-top:8px;
+	height:12px;
+	text-align:right;
+	clear:both;
+}
+.sv_info .group .g_body{
+	margin-top:16px;
+	line-height:1.5em;
+	padding-left:2em;
+	clear:both;
+}
+.sv_info .group .g_body p{
+	margin:1em 0;
+}
+
+/**
+ * @name report
+ * style for report which always has fixed form:
+ * title + rpt_header + rpt_search + body
+ */
+.sv_info .report{
+	margin-top:30px;
+}
+.sv_info .report .rpt_header{
+	padding-bottom:1em;
+}
+.sv_info .report .rpt_header .icon_btn{
+	float:right;
+}
+.sv_info .search_wrapper{
+	padding:12px 0;
+}
+/*search_wrapper_ani: for animate display searchbar.*/
+.sv_info .search_wrapper_ani{
+	height:0;
+	font-size:1px;
+	display:none;
+	overflow:hidden;
+	border-top:solid 1px #ccc;
+}
+.sv_info .search_bottom_bar{
+	line-height:16px;
+	padding-top:5px;
+}
+/*.sv_info .report .rpt_body{
+}*/
+/**
+ * @name chart_wrapper
+ * style for chart wrapper.
+ */
+.sv_info .chart_wrapper {
+	text-align:center;
+	margin:5px auto;
+}
+.sv_info .report .chart_wrapper {
+	margin:2em auto;
+}
+.sv_info .report .sv_tip{
+	text-align:center;
+	margin:2em auto;
+}
+/**
+ * @name hash_info
+ * style for hash table content.
+ */
+.sv_info table.hash_info {
+	text-align:left;
+}
+.sv_info table.hash_info td, .sv_info table.hash_info th {
+	vertical-align:top;
+	line-height:14px;
+	padding:5px 0;/*for multi lines content*/
+}
+.sv_info table.hash_info th {
+	font-weight:normal;
+	width:100px;
+	white-space:nowrap;
+	text-align:left;
+}
+/**
+ * @name data_list
+ * style for list data table.
+ */
+.sv_info .data_list{
+	width:100%;
+}
+.sv_info .data_list th, .sv_info .data_list td{
+	border-bottom:solid 1px #eee;
+	line-height:14px;
+	padding:3px;
+	text-align:left;
+}
+.sv_info .data_list th{
+	background-color:#eee;
+	font-weight:normal;
+}
+.sv_info .three_line_form{
+	width:100%;
+	border-top:solid 1px #000;
+	border-bottom:solid 1px #000;
+}
+.sv_info .three_line_form th, .sv_info .three_line_form td{
+	line-height:14px;
+	padding:3px;
+	text-align:left;
+}
+.sv_info .three_line_form th{
+	border-bottom:solid 1px #000;
+}
+/**
+ * @name title_list
+ * style for title list.
+ */
+.sv_info .title_list li{
+	list-style:none;
+	margin:8px 0;
+}
+.sv_info .title_list .timestamp{
+	float:right;
+	color:#999;
+}
+.sv_info .title_list li.more{
+	text-align:right;
+}
+/**
+ * @name search_list
+ * style for search results list.
+ * contains following article info: title, abstract, hilite keyword and description.
+ */
+.sv_info .search_list li{
+	list-style:none;
+	margin:8px 0 20px 0;
+	line-height:1.5;
+}
+.sv_info .search_list .title{
+	font-size:14px;
+}
+.sv_info .search_list .desc{
+	color:#008000;
+}
+
+/**
+ * @name sv_pagination
+ * style for pagination.
+ */
+.sv_info .sv_pagination{
+	height:20px;
+	margin-top:30px;
+}
+.sv_info .sv_pagination{
+	height:25px;
+	margin-top:30px;
+	font-size:14px;
+}
+
+/**
+ * @name basic_info
+ * style for basic info of device detail page.
+ */
+.sv_info .basic_info .res_image_ctn{
+	width:60px;
+	vertical-align:top;
+}
+.sv_info .basic_info .res_image_ctn img{
+	border:none;
+	margin-top:1.5em;
+}
+.sv_info .basic_info .res_info{
+	vertical-align:top;
+}
+/**
+ * @name export_header
+ * the header style of export pdf page.
+ * @name print_header
+ * the header style of print page.
+ */
+.sv_export_header, .sv_print_header{
+	height: 25px;
+	margin-bottom:2em;
+	text-align:right;
+	border-bottom:solid 1px #ccc;
+}
+.sv_print_header{
+	display:none;
+}
+
+@media print{
+	.sv_info{
+		margin:0;
+	}
+	.sv_info .top_bar, .sv_info .report .rpt_search{
+		display:none;
+	}
+	.sv_print_header{
+		display:block;
+	}
+}

@@ -1,0 +1,16 @@
+/**
+ * jquery flot style for rl, base on flot example.css
+ * @change
+    #1-A by prcjack @2014/04/11 Creates file.
+ */
+
+.jquery_flot_placeholder {
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+	line-height: 1.2em;
+}
+
+.jquery_flot_placeholder .legend table {
+	border-spacing: 5px;
+}

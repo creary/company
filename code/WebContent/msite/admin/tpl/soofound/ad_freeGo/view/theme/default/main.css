@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* CSS Document */
+.soof_msite{
+	background-color:#666;
+}
+.soof_msite .page_viewport{
+	max-width:500px;
+	margin:0 auto;
+	background-color:#fff;
+}
+.soof_msite .soof_head{
+	text-align:center;
+}
+.soof_msite .soof_head .logo{
+	margin:10px 0;
+	max-width:100%;
+}
+.soof_msite .soof_foot{
+	margin-top:1em;
+}
+.soof_msite .copyright{
+	line-height:24px;
+	padding:21px 2em;
+	font-size:14px;
+	background-color:#eee;
+	text-align:center;
+}
+
+/**
+ * login: Login page style.
+ */
+.soof_msite .login{
+	border:solid 1px #ccc;
+	border-left:none;
+	border-right:none;
+	background-color:#f8f8f8;
+	margin:0 auto;
+}
+.soof_msite .login .login_viewport{
+	margin:20px 1em;
+}
+.soof_SignInTabPanel .deco_tabbar .deco_tab{
+	padding:8px !important;
+}
+
+@media (min-width: 350px){
+.soof_msite .login .login_viewport{
+	margin:20px 2em;
+}
+}
+
+@media (min-width: 450px){
+.soof_msite .soof_head .logo{
+	margin:20px 0;
+}
+.soof_msite .login .login_viewport{
+	margin:20px 3em;
+}
+.soof_msite .soof_foot{
+	margin-top:20px;
+}
+}
+@media (min-height: 750px){
+.soof_msite .copyright{
+	padding:32px 2em;
+	font-size:16px;
+}
+}
+

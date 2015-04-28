@@ -1,0 +1,52 @@
+@charset "utf-8";
+/*
+rlx_mti_form_help_card: form help card.
+*/
+.rlx_mti_form_help_card {
+	width:95%;
+	margin:1em auto 0;
+	border:solid 1px #eee;
+	text-align:left;
+	background-color:#FFC;
+}
+.rlx_mti_form_help_card .help_iwrap {
+	position:relative;
+	left:0;
+	top:0;
+}
+.rlx_mti_form_help_card .help_body{
+	padding:.5em 1.5em 0 1em;
+	line-height:16px;
+	overflow:hidden;
+}
+.rlx_mti_form_help_card a.btn_close{
+	position:absolute;
+	right:5px;
+	top:5px;
+	color:red;
+	font-weight:bold;
+	font-size:12px;
+}
+.rlx_mti_form_help_card a.btn_close:hover{
+	color:#F60;
+}
+.rlx_mti_form_help_card a.btn_toggler{
+	display:block;
+	height:25px;
+	line-height:25px;
+	text-align:center;
+	cursor:pointer;
+}
+.rlx_mti_form_help_card a.btn_toggler:hover{
+	background-color:#FF9;
+}
+.rlx_mti_form_help_card ol {
+	margin-left:2em;
+	list-style:decimal;
+}
+.rlx_mti_form_help_card ol.grade1 li {
+	list-style:upper-alpha;
+}
+.rlx_mti_form_help_card ol.grade2 li {
+	list-style:decimal;
+}

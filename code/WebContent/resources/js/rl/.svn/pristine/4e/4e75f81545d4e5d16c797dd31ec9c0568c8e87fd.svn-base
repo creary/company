@@ -1,0 +1,1 @@
+orderjs.define("app.opoa.flashMemory",["lib.data.store.engine"],function(){rl.createNamespace("rl.opoa"),rl.opoa.flashMemory=new rl.data.StoreHelper,rl.opoa.flashMemory.setState("disabled"),rl.flashMemory=rl.opoa.flashMemory});

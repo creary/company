@@ -1,0 +1,132 @@
+@charset "utf-8";
+/* style for Multi-tab interface(mti) standard detail page which includes a page nav menu, 
+   detail page always has 3 kinds of pages : overview, category, and kpi detail.*/
+/*
+rl.provided("x:mti.css.detailpage");
+*/
+
+.rlx_mti_detail_page .title_sep_line{
+	height:15px;
+	overflow:hidden;
+	font-size:1px;
+	border-bottom:solid 3px #999;
+}
+.rlx_mti_detail_page .page_menu_ctn{
+	margin-top:5px;
+	height:25px;
+}
+.rlx_mti_detail_page .page_menu{
+	list-style:none;
+}
+.rlx_mti_detail_page .page_menu li{
+	float:left;
+}
+.rlx_mti_detail_page .page_menu li a{
+	display:block;
+	padding:5px 2em;
+	color:black;
+}
+.rlx_mti_detail_page .page_menu li a:hover{
+	background-color:#eee;
+}
+.rlx_mti_detail_page .page_menu li.first a{
+	padding:5px 2em 5px 0;
+}
+.rlx_mti_detail_page .page_menu li.active a{
+	background-color:#333;
+	padding:5px 2em;
+	color:white;
+}
+
+.rlx_mti_detail_page .basic_info_panel{
+	margin-top:16px;
+	background-color:#F2F2F2;
+	padding:12px;
+}
+.rlx_mti_detail_page .basic_info_panel .node_icon_ctn{
+	width:80px;
+	padding-top:2em;
+	padding-right:10px;
+	text-align:center;
+	vertical-align:top;
+}
+.rlx_mti_detail_page .basic_info_panel .stat_ctn{
+	vertical-align:top;
+	width:30%;
+	border-left:solid 1px #CCC;
+}
+.rlx_mti_detail_page .basic_info_panel .alarm_legend{
+	margin-top:1em;
+	line-height:20px;
+}
+.rlx_mti_detail_page .basic_info_panel .alarm_legend img{
+	border:0 none;
+}
+
+.rlx_mti_detail_page .basic_info_panel th.label{
+	background:none;
+}
+.rlx_mti_detail_page .basic_info_panel .rl_databox_field_list th.label,
+.rlx_mti_detail_page .basic_info_panel .rl_databox_field_list td.field_ctn{
+	border:none;
+}
+/**
+ * 
+ */
+
+.rlx_mti_detail_page .page_main{
+	margin-top:16px;
+}
+.rlx_mti_detail_page h4.main_title {
+	margin-top:1em;
+	font-size:14px;
+}
+.rlx_mti_detail_page .main_toolbar{
+	margin-top:5px;
+	padding:0 1em;
+	height:20px;
+	border-bottom:solid 1px #999;
+	text-align:right;
+}
+.rlx_mti_detail_page .l_cols{
+	/* prevent content overflow */
+	table-layout:fixed;
+}
+.rlx_mti_detail_page .rlx_mti_l_main{
+	padding-left:16px;
+	vertical-align:top;
+}
+.rlx_mti_detail_page .rlx_mti_l_side{
+	width:180px;
+	vertical-align:top;
+	background-color:#F2F2F2;
+}
+.rlx_mti_detail_page .rlx_mti_l_main .group .g_body{
+	margin-top:.5em;
+	padding-left:0;
+}
+.rlx_mti_detail_page .rlx_mti_l_side .group{
+	margin:1em 0 0 1em;
+}
+.rlx_mti_detail_page .side_nav{
+	list-style:none;
+}
+.rlx_mti_detail_page .side_nav li a{
+	display:block;
+	margin-top:5px;
+	padding:5px 1.5em;
+	color:black;
+	background: url(../image/default/mix/bullets.gif) no-repeat 0 10px;
+}
+.rlx_mti_detail_page .side_nav li a:hover{
+	color:#F90;
+}
+.rlx_mti_detail_page .side_nav li.active a{
+	color:#F90;
+	background-position:0 -40px;
+}
+.rlx_mti_detail_page .toolbar{
+	padding:1em;
+	background-color:#F2F2F2;
+}
+

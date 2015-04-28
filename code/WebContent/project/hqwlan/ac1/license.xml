@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<License Developer="GuangZhou Soofound Software Corporation">
+	<CustomerDetails>
+		<Property Name="ProductID" Value="SF006" />
+		<Property Name="Vendor" Value="广州市虹联信息技术有限公司" />
+		<Property Name="Customer" Value="北京虹桥信息技术有限公司" />
+		<Property Name="MachineID" Value="apps-aqor-apps-aqom" />
+		<Property Name="LicenseType" Value="Registered" />
+		<Property Name="GenerationDate" Value="2015-01-14" />
+		<Property Name="ExpiryDate" Value="2020-01-01" />
+	</CustomerDetails>
+	<ProductDetails>
+		<Property Name="ProductName" Value="SooFac" />
+		<Property Name="ProductType" Value="Standard" />
+		<Property Name="Version" Value="3.3.7" />
+		<Property Name="ReleaseDate" Value="2015-01-12" />
+		<Property Name="DeviceNumber" Value="100" />
+		<Property Name="Boot" Value="/project/hqwlan/boot.xml" />
+	</ProductDetails>
+	<Code>938c2ddc56637ef05d08b7e1571c824864a4a97a4814e20bc0cc0a4f05fafb3ed7461948d62b9583c00ffb882677a74622c5905c62edd7da06e7897d52b53cf245207398bea96b57f99e5632414672fe298e46507208c717ae53276b93f052e9e91a737122123ead9e5f02f88d090d168dac771094a769bc4f9fc77c7c7bd876</Code>
+</License>

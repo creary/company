@@ -1,0 +1,276 @@
+@charset "utf-8";
+/*
+input items style;
+*/
+
+.rl_input{
+}
+
+.rl_input input{
+	height:18px;
+	*height:16px;
+	line-height:18px;
+	margin-top:2px;
+	*margin-top:1px;/*ie*/
+}
+.rl_input select{
+	height:20px;
+	line-height:20px;
+	font-size:11px;/*ie 6*/
+	margin-top:1px;
+}
+.rl_input label{
+	line-height:25px;
+}
+.rl_label{
+	margin-top:5px;
+	/**margin-top:6px;*/
+}
+.rl_input .mask_value{
+	/*font-style:italic;*/
+	color:gray;
+}
+
+.rl_input .clearer{
+	width:12px;
+	height:12px;
+	overflow:hidden;
+	border:0 none;
+	background:#fff url(../image/default/inputs/input_clearer.gif) no-repeat 4px bottom;
+}
+.rl_input .clearer_bg_over{
+	background-image:url(../image/default/inputs/input_clearer_over.gif);
+}
+.rl_input .clearer_bg_hidden{
+	background-image:none;
+}
+
+
+/**
+ * @name rl_ctm_input
+ * customized input, like DateSelect, TreeSelect and etc.
+ */
+.rl_ctm_input{
+	vertical-align:middle;
+	line-height:22px;
+}
+.rl_ctm_input input{
+	border:0;
+	cursor:default;
+	/*margin-top:-2px;*/
+}
+.rl_ctm_input .wrapper{
+	border:solid 1px #DBDFE6;
+	border-top-color:#ABADB3;
+	border-bottom-color:#E3E9EF;
+	padding:2px 0;
+	background-color:#fff;
+}
+/*tmp override styles defined in Form.css .rl_form_table INPUT */
+.rl_ctm_input .wrapper input{
+	position:relative;
+	top:1px;
+	height:15px;
+	font-size:12px;
+}
+
+/*
+wrapper_inline_hack: hack for non STEADY_INLINE_HEIGHT browsers(ie6,7).
+*/
+.rl_ctm_input .wrapper_inline_hack{
+	padding:1px 0;
+}
+.rl_ctm_input_over .wrapper,
+.rl_ctm_input_focused .wrapper{
+	background:#fff url(../image/default/inputs/icon_bg_bordered_l.gif) no-repeat right;
+}
+.rl_ctm_input_disabled .wrapper{
+	background:#eee;
+}
+.rl_ctm_input .rl_icon_btn button.actionctrl{
+	height:16px;
+	width:18px;
+	background-position:right;
+}
+@-moz-document url-prefix(){/*hack firefox*/
+	.rl_ctm_input .wrapper{
+		padding:2px 0;
+	}
+	.rl_ctm_input .rl_icon_btn button.actionctrl{
+		margin-top:-3px;
+		height:18px;
+		width:18px;
+	}
+}
+
+.rl_ctm_input .rl_icon_btn img.actionctrl{
+	border:0;
+	height:16px;
+	width:12px;
+	*width:20px;
+}
+
+/**
+ * rl_select
+ */
+.rl_select {
+}
+.rl_select .items_wrapper {
+	margin:1px;
+	/* hack ie6: overflow bug */
+	width:auto !important;
+	height:auto !important;
+	overflow:auto !important;
+	position:inherit !important;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	position:relative;
+}
+.rl_select .select_item {
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	padding:3px 6px;
+	line-height:18px;
+}
+.rl_select .select_item_selected {
+	background-color:#3399FF;
+	color:white;
+}
+.rl_select .select_item_disabled {
+	background-color:#eee !important;
+	color:gray !important;
+}
+.rl_select .select_item_focused {
+	border:dotted 1px #fff;
+}
+.rl_select .select_item * {
+	vertical-align:middle;
+}
+.rl_select .select_item .item_icon{
+	margin-left:3px;
+	width:16px;
+	height:16px;
+}
+.rl_select .select_item .item_text{
+	margin-left:3px;
+}
+
+/**
+ * time selector
+ */
+.rl_timeselect{
+	vertical-align:middle;
+}
+.rl_timeselect .wrapper{
+	border:solid 1px #A6C2E6;
+	background-color:#fff;
+	
+}
+@-moz-document url-prefix(){/*hack firefox*/
+	.rl_timeselect .wrapper {
+		padding:1px;
+	}
+}
+.rl_timeselect_over{
+	background:url(../image/default/inputs/timeselect_bg_sprite.gif) no-repeat right top;
+	*background-position:right 1px;/*ie*/
+}
+.rl_timeselect_disabled{
+	background-position:right -15px;
+}
+.rl_timeselect input{
+	border:0;
+	text-align:right;
+	width:16px;
+	height:14px;
+	margin-top:-2px;
+	ime-mode:disabled;
+}
+.rl_timeselect .rl_icon_btn{
+}
+.rl_timeselect .rl_icon_btn button.scroller{
+	margin-top:-1px;
+	height:15px;
+	width:12px;
+	background-image:url(../image/default/inputs/arrow_bg.gif);
+	background-position:0 -15px;
+}
+.rl_timeselect .rl_icon_btn_over button.scroller{
+	background-position:0 0;
+}
+.rl_timeselect .rl_icon_btn_down button.scroller{
+	background-position:0 0;
+}
+.rl_timeselect .rl_icon_btn img.scroller{
+	border:0;
+	width:9px;
+	height:10px;
+}
+
+/**
+ * checkbox
+ */
+.rl_checkbox{
+	cursor:default;
+}
+.rl_checkbox .checkbox{
+	width:14px;
+	height:14px;
+	border:none;
+	background:url(../image/default/inputs/checkbox_sprite.gif) 0 top no-repeat;
+}
+.rl_checkbox_mouseover .checkbox{
+	background-position: 0 -14px;
+}
+.rl_checkbox_descendant_checked .checkbox{
+	background-position: 0 -28px;
+}
+.rl_checkbox_checked .checkbox{
+	background-position: 0 -42px;
+}
+.rl_checkbox_disabled .checkbox{
+	background-position: 0 -56px;
+}
+
+/**
+ * Module("app.deco.WeekHourSelect") style.
+ */
+.rl_weekhourselect{
+}
+.rl_weekhourselect .grid{
+	border-collapse:collapse;
+	cursor:default;
+	width:100%;
+	-moz-user-select:none ;/*for ff*/
+	-webkit-user-select: none; /*for webkit*/
+}
+.rl_weekhourselect td.cell{
+	padding:5px 2px;
+	border:solid 1px #ccc;
+}
+.rl_weekhourselect .header td.cell,
+.rl_weekhourselect td.dayname_cell{
+	padding:5px;
+	text-align:center;
+}
+.rl_weekhourselect td.hour_cell{
+	cursor:pointer;
+}
+.rl_weekhourselect td.odd_hour{
+	background-color:#f2f2f2;
+}
+.rl_weekhourselect:not(.disabled) td.hour_cell:hover{
+	background-color:#ddd;
+}
+.rl_weekhourselect td.selected{
+	background-color:#0C0;
+}
+.rl_weekhourselect:not(.disabled) td.selected:hover{
+	background-color:#0F0;
+}
+.rl_weekhourselect.disabled td.hour_cell{
+	cursor:not-allowed;
+}
+

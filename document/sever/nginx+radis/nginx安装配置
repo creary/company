@@ -1,0 +1,248 @@
+Nginx优点
+    Nginx重点就是性能的优化。在访问峰值，或者恶意发起慢连接会导致服务器资源耗尽。
+    而nginx采取了分阶段资源分配技术，使得它的CPU与内存的占用率非常低。
+    官方表示保持1W个没有活动的连接，它只占用2.5M内存，所以基于以上情况及类似于DOS这样的攻击对nginx来说是毫无用处。
+
+能够支持高达50000个并发连接数的响应，在高并发的环境下Nginx是个不错的选择。
+
+   Nginx作为负载均衡的服务器，具体的配置见下面叙述。
+   Nginx 既可以在内部直接支持 Rails 和 PHP 程序对外进行服务，也可以支持作为 HTTP代理服务器对外进行服务。
+   Nginx采用C进行编写，不论是系统资源开销还是CPU使用效率都比 Perlbal 要好很多。
+
+Nginx支持热部署，启动容易可以做到7*24小时不间断运行。
+
+注意事项
+由于在nginx的配置文件用到了正则表达式，所在在安装nginx之前要确保系统中已经正确安装了pcre。
+
+************************
+
+一定要保证你的linux环境下正确安装了gcc，否则在使用make命令的时候报错的。
+
+************************
+NGINX安装与配置第三版
+1.	安装需要root权限
+
+2.	nginx下载网址：http://nginx.org/en/download.html
+
+1）安装gcc及gcc-c++   yum命令：yum –y install gcc
+	yum –y install gcc-c++
+2）安装pcre 及pcre-devel：可以用yum安装：yum –y install pcre
+yum –y install pcre-devel
+
+ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/ 
+下载tar包，安装方法如下：
+tar -xf pcre-8.33.tar.gz
+cd pcre-8.33
+./configure 如果下的文件里边包含makefile不用这步
+make 
+make install
+
+3）安装 openssl：http://www.openssl.org/source/下载tar包 
+tar -xf openssl-1.0.0a.tar.gz
+cd openssl-1.0.0a
+./configure 
+make 
+make install
+也可以用yum安装：yum –y install openssl
+4）安装zlib 及zlib-devel用yum –y install ***
+4）解压：tar –xf nginx-1.2.0.tar.gz
+ 
+5）cd 进入nginx-1.6.1 
+ 
+6）./configure
+如果不按照gcc直接运行会出现以下错误：
+ 
+7）make
+8）make install
+9）（测）可以用 yum search xxx 搜索软件包
+	一条命令安装 yum -y install gcc gcc-c++ pcre pcre-devel zlib zlib-devel openssl 
+4.	conf->nginx.conf配置文件：>>> >>>中部分要根据自己虚拟机情况进行配置
+>>>>>>>>>>>>>>>>>
+user root; #用户名
+>>>>>>>>>>>>>>>>>
+worker_processes  3;
+pid logs/nginx.pid;
+# [ debug | info | notice | warn | error | crit ]
+error_log   /usr/local/nginx/logs/error.log  info;#与自己文件目录一样 
+events {
+worker_connections   1024;
+# use [ kqueue | rtsig | epoll | /dev/poll | select | poll ] ;
+# 具体内容查看 http://wiki.codemongers.com/事件模型
+use epoll;
+}
+
+http {
+include       mime.types;
+default_type  application/octet-stream;
+
+log_format main      '$remote_addr - $remote_user [$time_local]  '
+'"$request" $status $bytes_sent '
+'"$http_referer" "$http_user_agent" '
+'"$gzip_ratio"';
+
+log_format download  '$remote_addr - $remote_user [$time_local]  '
+'"$request" $status $bytes_sent '
+'"$http_referer" "$http_user_agent" '
+'"$http_range" "$sent_http_content_range"';
+
+client_header_timeout  3m;
+client_body_timeout    3m;
+send_timeout           3m;
+
+client_header_buffer_size    1k;
+large_client_header_buffers  4 4k;
+
+gzip on;
+gzip_min_length  1100;
+gzip_buffers     4 8k;
+gzip_types       text/plain;
+
+output_buffers   1 32k;
+postpone_output  1460;
+
+sendfile         on;
+tcp_nopush       on;
+tcp_nodelay      on;
+#send_lowat       12000;
+
+keepalive_timeout  75 20;
+
+#lingering_time     30;
+#lingering_timeout  10;
+#reset_timedout_connection  on;
+
+ upstream tomcats { 
+>>>>>>>>>>>>>>>>>>
+             server 192.168.214.130:8081 weight=1;#tomcat 地址及端口 weight设置权重
+            server 192.168.214.129:8082 weight=1;
+            server 192.168.214.130:8082 weight=1;
+            #             # ip_hash;
+>>>>>>>>>>>>>>>>>>>
+            }
+server {
+>>>>>>>>>>>>>>>>>>>
+        listen        8888; #nginx监听的端口
+        server_name   localhost; #nginx安装的虚拟机地址
+>>>>>>>>>>>>>>>>>>>
+        access_log  /usr/local/nginx/logs/access.log  main;
+
+
+location / {
+>>>>>>>>>>>>>>>>>>
+        proxy_pass         http://tomcats; #与上边upstream “tomcats”一致
+>>>>>>>>>>>>>>>>>>
+        proxy_redirect     off;
+
+        proxy_set_header   Host             $host;
+        proxy_set_header   X-Real-IP        $remote_addr;
+        #proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
+        client_max_body_size       10m;
+        client_body_buffer_size    128k;
+
+        client_body_temp_path      /usr/local/nginx/client_body_temp;
+
+        proxy_connect_timeout      90;
+        proxy_send_timeout         90;
+        proxy_read_timeout         90;
+#       proxy_send_lowat           12000;
+
+        proxy_buffer_size          4k;
+        proxy_buffers              4 32k;
+        proxy_busy_buffers_size    64k;
+        proxy_temp_file_write_size 64k;
+
+#       proxy_temp_path            /usr/local/nginx/proxy_temp;
+
+        charset  gb2312;
+}
+
+#error_page  404  /404.html;
+#location /404.html {
+#root  /spool/www;
+#charset         on;
+#source_charset  koi8-r;
+#}
+
+location /old_stuff/ {
+        rewrite   ^/old_stuff/(.*)$  /new_stuff/$1  permanent;
+}
+
+location /download/ {
+
+valid_referers  none  blocked  server_names  *.example.com;
+
+if ($invalid_referer) {
+        #rewrite   ^/   http://www.example.com/;
+        return   403;
+}
+
+#rewrite_log  on;
+# rewrite /download/*/mp3/*.any_ext to /download/*/mp3/*.mp3
+rewrite ^/(download/.*)/mp3/(.*)\..*$
+/$1/mp3/$2.mp3                   break;
+
+root   /usr/local;
+
+#autoindex    on;
+#access_log   /var/log/nginx-download.access_log  download;
+}
+
+location ~* ^.+\.(jpg|jpeg|gif)$ {
+root   /usr/local;
+        access_log   off;
+        expires      30d;
+        }
+ }
+ }
+
+
+测试：../sbin/nginx –t
+应出现以下信息，说明配置文件正确：
+the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok 
+　　the configuration file /usr/local/nginx/conf/nginx.conf was tested successfully
+
+启动：../sbin/nginx
+
+4.关闭防火墙 service iptables stop 
+5./usr/sbin/sestatus -v  ##如果SELinux status参数为enabled即为开启状态
+SELinux status:    enabled
+修改/etc/selinux/config 文件
+将SELINUX=enforcing改为SELINUX=disabled
+重启linux即可
+
+6.如果在同一台linux开启两个tomcat 需要改tomcat端口 与nginx配置中upstream tomcats端口相同，修改‘改’的部分
+	<Server port="8005" shutdown="SHUTDOWN"改"8005"
+        <Connector port="8081" protocol="HTTP/1.1"改"8081"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+	<Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />改"8009"
+<Engine name="Catalina" defaultHost="localhost" jvmRoute="jvm1">改"jvm1"
+
+7.访问localhost:8888
+8.安装tomcat8直接用http://192.168.1.12:80可以实现负载均衡
+如果安装的是tomcat6，最好使用restclient发post请求，否则在get请求方式下的发送方式是如下http://192.168.1.12:80?name=xxx 每次请求改变xxx的值
+
+9.异常情况解决
+ 
+
+ 
+卸载OpenJDK 
+方法：rpm -e --nodeps java-1.6.0-openjdk-*
+
+ 
+安装z-devel
+
+configure: error: You need a C++ compiler for C++ support.
+安装gcc-c++
+
+
+
+Loaded plugins: fastestmirror, refresh-packagekit, security
+Loading mirror speeds from cached hostfile
+Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=os error was
+14: PYCURL ERROR 6 - "Couldn't resolve host 'mirrorlist.centos.org'"
+Error: Cannot find a valid baseurl for repo: base
+
+网不行
+
+

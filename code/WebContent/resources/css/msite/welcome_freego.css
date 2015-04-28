@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* 
+ soof_welcome_freego: formed one brand pic and go btn, for welcome page.
+*/
+body.soof_welcome_freego_bg{
+	background-color:#666;
+}
+.soof_welcome_freego .page_viewport{
+	max-width:500px;
+	margin:0 auto;
+	background-color:#fff;
+}
+.soof_welcome_freego .section_jump{
+	border-top:solid 1px #999;
+	text-align:center;
+	font-family:"微软雅黑";
+	background-color:#eee;
+}
+.soof_welcome_freego .welcome_img{
+	width:100%;
+}
+.soof_welcome_freego .welcome_text{
+	padding-top:18px;
+	font-size:16px;
+}
+.soof_welcome_freego .agreement_ctn{
+	padding-top:6px;
+	color:#999;
+}
+.soof_welcome_freego .agreement_ctn a{
+	color:#999;
+}
+.soof_welcome_freego .jump_btn{
+	height:60px;
+	line-height:60px;
+	width:250px;
+	margin-top:18px;
+	opacity:1;
+	border:solid 1px #ccc;
+	border-radius:5px;
+	background-color:#09C;
+	color:#fff;
+	font-size:24px;
+}
+.soof_welcome_freego .jump_btn:hover{
+	opacity:0.8;
+}
+.soof_welcome_freego .soof_foot{
+	margin-top:1em;
+}
+.soof_welcome_freego .soof_foot .copyright{
+	line-height:24px;
+	padding:12px 6px;
+	background-color:#eee;
+	text-align:center;
+}
+@media (min-height: 600px){
+.soof_welcome_freego .welcome_text{
+	padding-top:24px;
+}
+.soof_welcome_freego .jump_btn{
+	margin-top:36px;
+}
+}
+
+@media (min-height: 750px){
+.soof_welcome_freego{
+	font-size:14px;
+}
+.soof_welcome_freego .welcome_text{
+	padding-top:36px;
+	font-size:18px;
+}
+.soof_welcome_freego .agreement_ctn{
+	padding-top:12px;
+	font-size:14px;
+}
+.soof_welcome_freego .jump_btn{
+	margin-top:56px;
+	margin-bottom:36px;
+	width:300px;
+	height:80px;
+	line-height:80px;
+	font-size:30px;
+}
+}

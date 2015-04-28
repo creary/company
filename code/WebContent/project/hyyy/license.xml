@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<License Developer="GuangZhou Soofound Software Corporation">
+	<CustomerDetails>
+		<Property Name="ProductID" Value="SF011" />
+		<Property Name="Vendor" Value="广州市虹联信息技术有限公司" />
+		<Property Name="Customer" Value="西安智科无线通讯技术有限公司" />
+		<Property Name="MachineID" Value="soofac-apps-acqx" />
+		<Property Name="LicenseType" Value="Trial" />
+		<Property Name="GenerationDate" Value="2015-04-16" />
+		<Property Name="ExpiryDate" Value="2019-05-25" />
+	</CustomerDetails>
+	<ProductDetails>
+		<Property Name="ProductName" Value="SooFac" />
+		<Property Name="ProductType" Value="Standard" />
+		<Property Name="Version" Value="3.5.7" />
+		<Property Name="ReleaseDate" Value="2015-04-15" />
+		<Property Name="DeviceNumber" Value="300" />
+		<Property Name="Boot" Value="/project/hyyy/boot.xml" />
+	</ProductDetails>
+	<Code>c3ca51db5825b7fd0722bdd202311bdfe11d668334b9905dd42d1559031c33ba09d6453a3367b1d667f8d494a23ddf6f8691b51ed86e6783e7bd52d3efc64018e706f5a1d7c9d8ed30252793ae8c04f5f3412b581334a73490c4be4eba8fb9cd1b7e242d089f1979ecaf040f604b4c00c84a74add0a5ac316a355879dd9cc28a</Code>
+</License>

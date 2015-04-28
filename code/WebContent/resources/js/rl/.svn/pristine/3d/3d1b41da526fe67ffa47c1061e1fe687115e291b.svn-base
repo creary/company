@@ -1,0 +1,1 @@
+orderjs.define("lib.data.store.storageMgr",["lib.data.engine"],function(){rl.data.storageMgr=function(){return{create:function(){},open:function(){}}}()});

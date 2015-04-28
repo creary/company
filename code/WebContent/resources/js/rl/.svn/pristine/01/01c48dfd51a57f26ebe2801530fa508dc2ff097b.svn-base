@@ -1,0 +1,65 @@
+@charset "utf-8";
+/*
+Simple tab panel component
+*/
+
+.rl_tabs_decorator{
+	width:100%;
+}
+.rl_tabs_decorator .deco_tabbar{
+	float:left;
+	clear:both;
+	width:100%;
+	border-bottom:solid 1px #ddd;
+}
+.rl_tabs_decorator .deco_tabbar ul,
+.rl_tabs_decorator .deco_tabbar li{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.rl_tabs_decorator .deco_tabbar ul{
+	margin-left:12px;
+}
+.rl_tabs_decorator .deco_tabbar .deco_tab{
+	cursor:pointer;
+	float:left;
+	margin:0 3px;
+	padding:3px 5px;
+	height:16px;
+	line-height:18px;
+}
+.rl_tabs_decorator .deco_tabbar .active{
+	background-color:#eee;
+	border:solid 1px #ddd;
+	border-bottom:none;
+	padding:2px 4px;
+	padding-bottom:3px;
+}
+.rl_tabs_decorator .deco_tabbar .x_btn{
+	float:right;
+	margin-left:10px;
+}
+
+.rl_tabs_decorator .deco_tab_stack{
+	clear:both;
+}
+.rl_tabs_decorator .deco_tab_stack .deco_tab_body{
+	display:none;
+}
+.rl_tabs_decorator .deco_tab_stack .active{
+	display:block;
+}
+/**
+ * rl_tabs_decorator_blue : blue theme.
+ */
+.rl_tabs_decorator_blue .deco_tabbar{
+	background-color:#D8EAF8;
+	border-bottom:solid 1px #C0DBFD;
+}
+.rl_tabs_decorator_blue .deco_tabbar .active{
+	background-color:#E7F2FB;
+	border:solid 1px #C0DBFD;
+	border-bottom:none;
+}
+

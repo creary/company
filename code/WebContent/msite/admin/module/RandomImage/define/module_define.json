@@ -1,0 +1,11 @@
+{
+	"id" : "RandomImage",
+	"name" : "随机图片",
+	"desc" : "",
+	"fields" : [
+		{
+			"name" : "RandomImage_images",
+			"value" : ""
+		}
+	]
+}

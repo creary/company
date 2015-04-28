@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<License Developer="GuangZhou Soofound Software Corporation">
+	<CustomerDetails>
+		<Property Name="ProductID" Value="SF012" />
+		<Property Name="Vendor" Value="广州市虹联信息技术有限公司" />
+		<Property Name="Customer" Value="广州派联信息科技有限公司" />
+		<Property Name="MachineID" Value="qnh8-twou-acto-tjbd" />
+		<Property Name="LicenseType" Value="Registered" />
+		<Property Name="GenerationDate" Value="2015-04-27" />
+		<Property Name="ExpiryDate" Value="2020-01-01" />
+	</CustomerDetails>
+	<ProductDetails>
+		<Property Name="ProductName" Value="ElementSentry" />
+		<Property Name="ProductType" Value="Standard" />
+		<Property Name="Version" Value="3.5.12" />
+		<Property Name="ReleaseDate" Value="2015-04-27" />
+		<Property Name="DeviceNumber" Value="1000" />
+		<Property Name="Boot" Value="/project/pifii/boot.xml" />
+	</ProductDetails>
+	<Code>d60cddc48fb511fddaf85fa54b45df3ee922216d04e6be312a2c5c6dbf3c558604d9052ef141ccf5052e2971809be7664c4c00149a2503d1bfee40d21a477a24920f761341b3fb201c6118cebe4b4cc9c6a9c6568d4bb8cf78e59cad28a0e984d5a3244b1ffe1642ffe008977d1845dee0d3c2b38a811d1dba87ba0b12ffd96d</Code>
+</License>

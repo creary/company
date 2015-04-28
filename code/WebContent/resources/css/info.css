@@ -1,0 +1,936 @@
+@charset "utf-8";
+/**
+ * Soofound info page standard style.
+ */
+.soof_page{
+	color:#444;
+}
+.soof_page_viewport{
+	margin:42px 42px 100px 42px;
+}
+.soof_gridpage_viewport{
+	margin:42px 42px 10px 42px;
+}
+/* soof_dialog_viewport: viewport limit for dialog page */
+.soof_dialog_viewport{
+	width:700px; 
+	margin:42px auto 100px auto;
+}
+.soof_popuppage_viewport{
+	margin:30px 30px 50px 30px;
+}
+.soof_page a{
+	color:#03C;
+}
+.soof_page a:hover{
+	color:#FC0;
+}
+.soof_page ol{
+	padding-left:1.5em;
+	line-height:1.5em;
+	list-style-type:decimal;
+}
+.soof_header{
+}
+.soof_header h1{
+	font-size:28px;
+	text-align:left;
+}
+.soof_header .nav{
+	margin-top:24px;
+	height:25px;
+	background:url(../image/default/msite/dot_gray.gif) bottom repeat-x;
+}
+.soof_header .nav .list{
+    height: 100%;
+    list-style: none;
+}
+.soof_header .nav .list li{
+    float: left;
+    height: 100%;
+    margin-right: 24px;
+}
+.soof_header .nav .list a{
+    color: #777;
+    display: block;
+	font-weight:bold;
+    text-decoration: none;
+}
+.soof_header .nav .list a:hover{
+	color:#000;
+}
+.soof_header .nav .list .active{
+	background:url(../image/default/msite/dot_darkgray.gif) bottom repeat-x;
+}
+.soof_header .nav .list .active a{
+    color: #000;
+}
+
+.soof_body{
+	padding-top:36px;
+}
+.soof_body p{
+	line-height:1.4em;
+}
+.soof_body .cols2_layout{
+	width:100%;
+}
+.soof_body .mc_wrapper{
+	max-width:900px;
+}
+.soof_body .widthholder{
+	width:660px;
+}
+.soof_body .sidebar{
+	width:210px;
+}
+
+/* form components */
+.soof_page .field{
+	width:300px;
+	padding-left:3px;
+	height:28px;
+	line-height:28px;
+	border:solid 1px #ddd;
+	color:#444;
+	font-size:12px;
+}
+/*
+ s: short, xs: extra short, 
+ l: long, xl: extra long.
+*/
+.soof_page .field.s{
+	width:150px;
+}
+.soof_page .field.xs{
+	width:100px;
+}
+.soof_page .field.l{
+	width:450px;
+}
+.soof_page .field.xl{
+	width:600px;
+}
+.soof_page input.field{
+	line-height:28px;
+}
+.soof_page select.field{
+	padding:4px;
+}
+.soof_page select.field option{
+	padding:4px;
+}
+.soof_page .field:hover{
+	box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.soof_page .field:focus{
+	border-color:#66AFE9;
+	box-shadow:0 2px 2px rgba(0, 0, 0, 0.1) inset;
+}
+.soof_page .field:blur{
+	border-color:#ddd;
+}
+.soof_page .field_selector{
+	vertical-align:middle;
+	min-height:16px;
+}
+.soof_page .selectors_row .field_selector{
+	margin-left:24px;
+}
+.soof_page .selectors_row .field_selector:first-child,
+.soof_page .selectors_row .field_selector.first{
+	margin-left:0;
+}
+.soof_page .label{
+	vertical-align:middle;
+}
+.soof_page .selector_label{
+	padding-left:6px;
+	vertical-align:middle;
+}
+.soof_page .indent_selector{
+	padding-left:20px;
+}
+/* 
+ width_label : label has fixed width.
+ */
+.soof_page .width_label{
+	display:inline-block;
+	vertical-align:middle;
+	width:100px;
+}
+.soof_page .width_label.s{
+	width:80px;
+}
+.soof_page .width_label.xs{
+	width:50px;
+}
+.soof_page .width_label.l{
+	width:120px;
+}
+.soof_page .width_label.xl{
+	width:150px;
+}
+.soof_page .fields_box,
+.soof_page .sections_box{
+	padding:1em; 
+	margin:.5em 0;
+	border:solid 1px #eee;
+}
+.soof_page .sections_box{
+	padding-bottom:0;/* the inner section already has spacing */
+}
+
+.soof_page input.btn,
+.soof_page button.btn{
+	/*height:28px;*/
+	padding:6px 1em;
+	border:solid 1px #ddd;
+	border-radius:3px;
+	cursor:pointer;
+	white-space:nowrap;
+}
+.soof_page input.btn.s,
+.soof_page button.btn.s{
+	padding:3px .5em;
+}
+.soof_page input.btn.l,
+.soof_page button.btn.l{
+	padding:9px 1.5em;
+}
+.soof_page a.btn{
+	white-space:nowrap;
+}
+.soof_page a.ilink .text{
+	padding-left:5px;
+}
+.soof_page a.ilink.tight .text{
+	padding-left:3px;
+}
+.soof_page input.white,
+.soof_page button.white{
+	background-color:#fff;
+}
+.soof_page button.white:hover{
+	background-color:#f2f2f2;
+}
+.soof_page button.green{
+	background-color:#44B549;
+	color:#fff;
+	border:none;
+}
+.soof_page button.green:hover{
+	background-color:#0C3;
+}
+.soof_page button.yellow{
+	background-color:#eb9316;
+	color:#fff;
+	border:none;
+}
+.soof_page button.yellow:hover{
+	background-color:#F93;
+}
+.soof_page button.primary{
+	padding:8px 2em;
+	border:none;
+	background-color:#09C;
+	color:#fff;
+}
+.soof_page button.primary:hover{
+	background-color:#00B3EE;
+}
+.soof_page button.disabled,
+.soof_page button.disabled:hover{
+	background-color:#ccc;
+	color:#999;
+	cursor:not-allowed;
+}
+
+/* img_field: limit img display*/
+.soof_page .img_field{
+	max-width:100%;
+	max-height:300px;
+	border:0 none;
+}
+.soof_page .desc{
+	color:gray;
+}
+.soof_page h2 .desc,
+.soof_page h3 .desc{
+	font-size:.9em;
+	font-weight:normal;
+}
+.soof_page .sections_desc{
+	padding : 50px 0; 
+	text-align:center;
+	color:gray;
+	font-size:1.5em;
+}
+.soof_page .warn{
+	color:red;
+}
+.soof_page .note_box,
+.soof_page .warn_box{
+	padding:.5em;
+	border-radius:5px;
+	background-color:#E1F9FF;
+}
+.soof_page .warn_box{
+	background-color:#FFC;
+}
+
+/* choice_desc: desc for choice (checkbox, radio) selector */
+.soof_page .choice_desc{
+	padding-left:19px;
+	color:gray;
+}
+.soof_page .fluid{
+}
+.soof_page .fluid .col{
+	float:left;
+	width:16.66%;
+}
+.soof_page .fluid .row{
+	clear:both;
+}
+.soof_page .fluid .span2{
+	width:33.33%;
+}
+.soof_page .fluid .span3{
+	width:50%;
+}
+.soof_page .fluid .span4{
+	width:66.66%;
+}
+.soof_page .fluid .span5{
+	width:83.33%;
+}
+.soof_page .fluid .span6{
+	width:100%;
+}
+/* sp_sm, sp_md, sp_lg : spacing small, middel, large */
+.soof_page .fluid.sp_sm .cell{
+	padding:0 12px;
+}
+.soof_page .fluid.sp_md .cell{
+	padding:0 18px;
+}
+.soof_page .fluid.sp_lg .cell{
+	padding:0 24px;
+}
+.soof_page .fluid.sp_sm .row{
+	padding:12px 0;
+}
+.soof_page .fluid.sp_md .row{
+	padding:18px 0;
+}
+.soof_page .fluid.sp_lg .row{
+	padding:24px 0;
+}
+.soof_page .fluid .row .col:first-child .cell{
+	padding-left:0;
+}
+.soof_page .fluid .row .col:last-child .cell{
+	padding-right:0;
+}
+.soof_page .fluid .row:first-child{
+	padding-top:0;
+}
+.soof_page .fluid .row:last-child{
+	padding-bottom:0;
+}
+
+
+/* num_stat: num kpi with cols layout, defaults to cols3 */
+.soof_page .num_stat{
+	border:solid 1px #eee;
+	background-color:#fdfdfd;
+	padding:1px 0;
+}
+.soof_page .num_stat .cell{
+	float:left;
+	width:33%;
+	border-left:solid 1px #eee;
+}
+.soof_page .num_stat_cols2 .cell{
+	width:49.5%;
+}
+.soof_page .num_stat_cols5 .cell{
+	width:19.5%;
+}
+.soof_page .num_stat .cell:first-child{
+	border-left:none;
+}
+.soof_page .num_stat .canvas{
+	margin:15px auto 9px auto;
+}
+.soof_page .num_stat .canvas .num{
+	padding-left:24px;
+	vertical-align:text-bottom;
+	font-weight:bold;
+	font-size:30px;
+	color:#09F;
+	text-align:center;
+}
+.soof_page .num_stat .canvas .name{
+	vertical-align:text-bottom;
+	padding:0 12px 0 24px;
+	font-weight:bold;
+	font-size:16px;
+	color:#666;
+	text-align:right;
+}
+.soof_page .num_stat .canvas .subname,
+.soof_page .num_stat .canvas .actions{
+	vertical-align:top;
+	padding-right:12px;
+	text-align:right;
+	color:#ccc;
+}
+.soof_page .num_stat .canvas .actions a.btn{
+	float:right;
+	padding:4px 12px;
+	margin-left:1px;
+	background-color:#09C;
+	color:#fff;
+	text-decoration:none;
+}
+.soof_page .num_stat .canvas .name a.btn{
+	margin-left:6px;
+	padding:4px 12px;
+	background-color:#09C;
+	color:#fff;
+	text-decoration:none;
+	font-size:12px;
+}
+.soof_page .num_stat .canvas a:hover.btn{
+	background-color:#0DB0FF;
+}
+
+.soof_page .nested_circles{
+	position:relative;
+	top:0;
+}
+.soof_page .nested_circles .circle_wrap{
+	position:absolute;
+	width:100%;
+	bottom:0;
+}
+.soof_page .nested_circles .circle{
+	position:relative;
+	top:0;
+	border-radius:100%;
+	margin:0 auto;
+	text-align:center;
+	color:#fff;
+}
+.soof_page .nested_circles .circle .num{
+	font-weight:bold;
+	font-size:30px;
+}
+.soof_page .nested_circles .circle .text{
+	padding-top:1em;
+}
+.soof_page .num_stat.vertical .cell{
+	float:none;
+	width:auto;
+	padding-left:0;
+	border-left:none;
+	border-top:solid 1px #eee;
+}
+.soof_page .num_stat.vertical .cell:first-child{
+	border-top:none;
+}
+.soof_page .num_stat.vertical .canvas .num{
+	padding-left:0;
+}
+.soof_page .num_stat.vertical .canvas .subname{
+	text-align:center;
+	color:#666;
+	padding-right:0;
+}
+
+
+/* soof_num_cols: nums kpi cols, use table layout. cells are layouted by <tr> not by colsN class */
+.soof_num_cols{
+	border:solid 1px #eee;
+	background-color:#fdfdfd;
+	padding:1px 0;
+}
+.soof_num_cols .layout{
+	width:100%;
+}
+.soof_num_cols .cell{
+	border-left:solid 1px #eee;
+}
+.soof_num_cols .cell:first-child{
+	border-left:none;
+}
+.soof_num_cols .canvas{
+	margin:15px auto 9px auto;
+}
+.soof_num_cols .canvas .num{
+	padding-left:24px;
+	vertical-align:text-bottom;
+	font-weight:bold;
+	font-size:30px;
+	color:#09F;
+	text-align:center;
+}
+.soof_num_cols .canvas .name{
+	vertical-align:text-bottom;
+	padding:0 12px 0 24px;
+	font-weight:bold;
+	font-size:16px;
+	color:#666;
+	text-align:right;
+}
+.soof_num_cols .canvas .subname{
+	vertical-align:top;
+	padding-right:12px;
+	text-align:right;
+	color:#ccc;
+}
+
+.soof_page .clearer{
+	clear:both;
+	height:0;
+}
+.soof_action_bar{
+	margin-top:12px;
+	padding-top:24px;
+	border-top:solid 1px #eee;
+}
+.soof_action_bar .btn{
+	margin-right:3em;
+}
+.soof_action_bar.no_sep{
+	padding-top:0;
+	border-top:none;
+}
+
+.soof_data_list{
+	width:100%;
+	border-collapse:collapse;
+}
+/* th.h is th head; td.c is td cell */
+.soof_data_list th.h,
+.soof_data_list td.c{
+	border:solid 1px #ddd;
+	padding:8px;
+	text-align:left;
+}
+.soof_data_list th.h{
+	background-color:#f2f2f2;
+}
+
+.soof_grid_fields{
+	width:100%;
+	margin:0 auto;
+	border-collapse:collapse;
+}
+.soof_grid_fields th.label,
+.soof_grid_fields td.field_ctn {
+	padding: 10px 5px;
+	vertical-align:middle;
+	border: 1px solid #ddd;
+}
+.soof_grid_fields th.label {
+	text-align: left;
+	font-weight:normal;
+	background-color:#f8f8f8;
+}
+
+.soof_grid_fields .field {
+	height:20px;
+	line-height:20px;
+	width:90%;
+	font-size:12px;
+	/*hack ie6 border style*/
+	_border-top:solid 1px #ABADB3;
+	_border-left:solid 1px #DBDFE6;
+	_border-right:solid 1px #DBDFE6;
+	_border-right:solid 1px #E3E9EF;
+}
+
+
+/**
+ * soof_upload_holder : Placeholder for upload elements (images or etc.) 
+ */
+.soof_upload_holder{
+	width:200px;
+	height:200px;
+	overflow:hidden;
+	border:dashed 1px #ddd;
+}
+.soof_upload_holder .up{
+	width:100%;
+}
+.soof_upload_holder .shim{
+	padding-top:40%; 
+	color:#ccc; 
+	font-size:24px; 
+	text-align:center;
+}
+/* switchable_section: section hide on init, and show on swith events(click or select change) */
+.soof_page .switchable_section{
+	display:none;
+}
+.soof_page .hidden_box{
+	position:absolute; 
+	left:-100px; 
+	top:-100px; 
+	height:1px;
+	width:1px;
+}
+
+/* 
+	rich_row : layout in a table columns, formed of 3 parts: icon, detail and actions,
+	Note: you should define the icons (url and position) b4 using.
+ */
+.soof_page .rich_row{
+	line-height:22px; 
+}
+.soof_page .sections_box .rich_row{
+	width : 100%;
+}
+.soof_page .rich_row .icon_ctn{
+	width:100px;
+}
+.soof_page .rich_row .icon_ctn .soof_icon{
+	margin:0 auto;
+	display:block;
+}
+.soof_page .rich_row .action_ctn{
+	padding-left:20px;
+	text-align:right;
+}
+.soof_page .rich_row.disabled,
+.soof_page .rich_row.disabled a{
+	color:gray;
+}
+.soof_page .rich_row.disabled a:hover{
+	color:#FC0;
+}
+.soof_page .processing_bar{
+	height:10px;
+	border:solid 1px #666;
+	border-radius:5px;
+	background:url(../image/default/icon/processing.gif) repeat-x;
+}
+.soof_page img.icon{
+	width:16px;
+	height:16px;
+	border:none;
+	vertical-align:middle;
+}
+.soof_need_tooltip{
+	cursor:default;
+}
+.soof_need_tooltip:hover{
+	background-color:#f2f2f2;
+}
+/**
+ * soof_img_viewer: img viewer provided a default view for no img, used to display an upload img.
+ */
+.soof_img_viewer{
+	float:left;
+	width:300px;
+	height:120px;
+	text-align:center;
+	background-color:#f8f8f8;
+	border:solid 1px #ccc;
+	overflow:hidden;
+}
+.soof_img_viewer .img_holder{
+	vertical-align:middle;
+	width:100%;
+	min-height:100%; /* take full place to kick the mask out */
+}
+.soof_img_viewer .mask{
+	line-height:120px;
+	font-size:18px;
+	color:gray;
+}
+/*
+.smartmask: mask that contains vplaceholder.
+*/
+.soof_img_viewer .smartmask{
+	height:100%;
+	font-size:18px;
+	color:gray;
+}
+/*
+.vplaceholder: vertical placeholder.
+*/
+.soof_img_viewer .vplaceholder{
+	height:40%;
+}
+.soof_img_viewer_upload_wrap{
+	float:left;
+	padding-left:12px;
+}
+
+/* soof_img_zoomviewer: img viewer with zoom function */
+.soof_img_zoomviewer{
+	float:right;
+	border:solid 1px #ddd;
+	width:150px;
+	height:150px;
+	text-align:center;
+}
+.soof_img_zoomviewer .iwrap{
+	position:relative;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+.soof_img_zoomviewer .bar{
+	position:absolute;
+	bottom:0;
+	right:0;
+	padding:8px;
+	background-color:rgba(255, 255, 255, 0.75);
+	border-top:solid 1px #ccc;
+	border-left:solid 1px #ccc;
+}
+.soof_img_zoomviewer img.main{
+	height:100%;
+	max-width:100%;
+}
+.soof_img_zoomviewer img.cloned{
+	position:absolute;
+	z-index:2;
+	top:-1px;
+	right:-1px;
+	width:auto;
+	height:auto;
+	max-width:none;
+	border:solid 1px #ddd;
+	box-shadow:0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * soof_popup_tip: popup tip, inline style: showed near to the interacting target.
+ */
+.soof_popup_tip_wrap{
+	position:relative;
+	left:0;
+	top:0;
+}
+.soof_popup_tip{
+	display:none;
+	position:absolute;
+	z-index:10;
+	top:40%;
+	left:40%;
+	text-align:center;
+}
+.soof_popup_tip.inline{
+	display:none;
+	margin-top:1em;
+	text-align:center;
+}
+.soof_popup_tip .tip{
+	display:inline-block;
+	padding:6px 12px;
+	border-radius:5px;
+	background-color:#666;
+	color:#fff;
+}
+
+.soof_drop_menu{
+	display:none;
+	position:absolute;
+	z-index:10;
+	left:0;
+	top:0;
+	width:200px;
+	padding: 5px 0;
+	border:solid 1px #ccc;
+	border-radius:5px;
+	box-shadow:0 6px 12px rgba(0, 0, 0, 0.176);
+	background-color:#fff;
+}
+.soof_drop_menu a.item{
+    clear: both;
+    color: #333333;
+    display: block;
+    font-weight: normal;
+    line-height: 1.42857;
+    padding: 5px 20px;
+    white-space: nowrap;
+	text-decoration:none;
+}
+.soof_drop_menu a.item:hover{
+	background-color:#09C;
+	color:#fff;
+}
+.soof_drop_menu .sep{
+	margin:6px 0;
+	border-top:solid 1px #ccc;
+}
+.soof_caret {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid;
+    display: inline-block;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    width: 0;
+}
+.soof_toggle_button,
+.soof_toggle_button i{
+    background: url("../image/default/mix/toggle_button.png") no-repeat 0 0;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    vertical-align: top;
+}
+.soof_toggle_button{
+	width:80px;
+	max-width:150px;
+}
+.soof_toggle_button i{
+	width:31px;
+}
+.soof_toggle_button{
+	background-position:left 0;
+}
+.soof_toggle_button:hover{
+	background-position:left -30px;
+}
+.soof_toggle_button i{
+	float:right;
+	background-position:right 0;
+}
+.soof_toggle_button:hover i{
+	background-position:right -30px;
+}
+.soof_toggle_button.disabled{
+	background-position:left -60px;
+}
+.soof_toggle_button.disabled:hover{
+	background-position:left -90px;
+}
+.soof_toggle_button.disabled i{
+	float:right;
+	background-position:right -60px;
+}
+.soof_toggle_button.disabled:hover i{
+	background-position:right -90px;
+}
+
+/* fix kindeditor uploadbutton style, whose style works bad on displaying long text. */
+.soof_fix span.ke-button-common{
+	padding-left:3px;
+}
+.soof_fix .ke-button-common.ke-button{
+	padding:0 8px;
+}
+
+/* soof_icard: icon card, with bottom bar */
+.soof_icard{
+	float:left;
+	width:250px;
+	margin-right:2em;
+	border:solid 1px #ddd;
+	border-radius:3px;
+}
+.soof_icard .cnt_wrap{
+	min-height:70px;
+	min-width:160px;
+	padding:1.4em 1em .7em 1em;
+	text-align:center;
+}
+.soof_icard .cnt{
+	margin:0 auto;
+	min-width:150px; 
+}
+.soof_icard .cnt .icon_ctn{
+	padding-right:.7em;
+	text-align:center;
+}
+.soof_icard .cnt .detail_ctn{
+	text-align:left;
+	vertical-align:middle;
+}
+.soof_icard .bar{
+	margin-top:.7em;
+	height:30px;
+	width:100%;
+	border-top:solid 1px #eee;
+	background-color:#f8f8f8;
+	text-align:center;
+}
+.soof_icard .bar .btn{
+	display:block;
+	padding:3px .5em;
+	text-decoration:none;
+	color:#333;
+}
+.soof_icard .bar .btn:hover{
+	color:#FC0;
+}
+.soof_icard .bar .btn.primary{
+	min-width:60px;
+}
+.soof_icard .bar .btn span{
+	display:inline-block;
+	width:100%;
+	padding:3px 0;
+	border-right:solid 1px #ddd;
+}
+.soof_icard .bar td:last-child .btn span{
+	border-right:none;
+}
+.soof_icard .warn_box{
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	text-align:center;
+}
+.soof_icard.disabled .cnt{
+	color:gray;
+}
+.soof_page .tight_fields td.field_ctn{
+	padding-left:5px;
+	padding-top:3px;
+}
+.soof_page .tight_fields input.field{
+	line-height:22px;
+}
+.soof_page .tight_fields select.field{
+	padding:0;
+	height:22px;
+	line-height:22px;
+}
+
+/**
+ * soof_selectbox_page: select box comp page style.
+ */
+.soof_selectbox_page .soof_page_viewport{
+	margin:12px 12px 55px;
+}
+.soof_selectbox_page .soof_body{
+	padding-top:0;
+}
+.soof_selectbox_bar{
+	position:fixed;
+	bottom:0;
+	height:55px;
+	width:100%;
+	border-top:solid 1px #ddd;
+	background-color:#f4f4f4;
+}
+.soof_selectbox_bar .iwrap{
+	margin-top:12px;
+	text-align:center;
+}
+.soof_selectbox_bar .btn{
+	margin-left:1em;
+	margin-right:1em;
+}

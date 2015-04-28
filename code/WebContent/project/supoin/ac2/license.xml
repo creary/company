@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<License Developer="GuangZhou Soofound Software Corporation">
+	<CustomerDetails>
+		<Property Name="ProductID" Value="SF005-2" />
+		<Property Name="Vendor" Value="广州市虹联信息技术有限公司" />
+		<Property Name="Customer" Value="深圳市销邦信息技术有限公司" />
+		<Property Name="MachineID" Value="aby+-adpp-aby+-adad" />
+		<Property Name="LicenseType" Value="Trial" />
+		<Property Name="GenerationDate" Value="2015-02-11" />
+		<Property Name="ExpiryDate" Value="2015-04-12" />
+	</CustomerDetails>
+	<ProductDetails>
+		<Property Name="ProductName" Value="SooFac" />
+		<Property Name="ProductType" Value="Standard" />
+		<Property Name="Version" Value="3.5.0" />
+		<Property Name="ReleaseDate" Value="2015-02-10" />
+		<Property Name="DeviceNumber" Value="300" />
+		<Property Name="Boot" Value="/project/supoin/boot.xml" />
+	</ProductDetails>
+	<Code>ab5e7b60d0ec49a2a9126d0d234ae42d8a0cc55ed998dfafc039b90c939f3e7aea48e077976abd1db763b8413d3cd29249c118d463b1fe8dfc0e30fb0514f3070ba3527fc953e3cf9e15cf41fdfbb68221ddf681a54f3a627574753c3c6dbd54b899a0520770b0dabada4c31bc34ac6b4ea83c650e4c912335000b0399d96e10</Code>
+</License>

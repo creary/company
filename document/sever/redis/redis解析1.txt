@@ -1,0 +1,114 @@
+一、大数据实用工具之redis使用-1
+
+1、redis介绍标签
+   (1)内存数据库
+      in-memory,绝大部分(剩下的是指virtual memory的swap)操作基于内存
+   (2)Key-Value数据库
+      数据结构为kv型，其典型特点是简单、易用、快速
+   (3)nosql数据库
+      是与sql相对比，一般是无事物，不是基于行来操作和存储的。
+      sql数据库典型代表：mysql,sql server,oracle
+      nosql的典型代表：redis,ssdb,mongodb,es,solr
+   (4)开源
+      代码自由分享
+   (5)ansi c语言编写
+      编译器支持的最通用广泛，易于做夸平台
+   (6)客户端支持广泛
+      python,php,ruby,java,c#等等
+      其客户端广泛型主要由开源软件自身质量以及通信协议的复杂程度。
+      redis的通信协议主要纯文本协议,交互和开发非常廉价，故支持的较好
+      通信协议：很简单的理解就是通信的双方约定好命令和数据的格式即可
+
+ps:本文中memcached简写为mem
+2、redis与memcached比较
+   2.1 相同点
+      (1) 内存数据库in-memory
+      (2) 属于泛key-value数据支持
+          mem的主要支持kv的。但redis除kv结构外，还支持list,set,zset,hashmap结构。
+	  在mem的kv中的v部分，是支持字节数组存储api的，所以它里边可以存放任何序列化好的客户端对象数据。
+      (3) 对分布式支持略同，由客户端来掌握
+          redis,mem自身都不直接简单支持分布式，但是客户端可以非常简单的将分布式实现，
+	  一般分布式做法：搭建redis,mem的多实例，基于hash函数对key做散列，映射或操作不同的实例即可。
+                 	  当然，实例之间亦不需要通信。
+      (4) 都是纯文本协议通信，没有如xml之类的复杂数据格式
+           这也是为何如此多的客户端支持它们
+      (5) 都是线程安全的，mem通过cas命令保证一致性，redis是单线程的。
+             在这点的说明上，mem是与网上统一的，redis的说明不尽统一。
+      (6) 两者都可以存储任意类型的数据，因为均支持字节数组操作
+	     主流编程语言均支持复杂对象的序列化成字节数组，
+	     故mem，redis可以存储任何数据对象，
+	     由客户端负责存储复杂数据的时候做序列化，
+	     获取复杂数据对象的字节数据后自行进行反序列化
+			
+   2.2 不同点
+      (1) memcached支持单一的kv，
+          redis还支持list,set,zset,hashmap等。
+
+      (2) memcached是纯内存
+          redis支持虚拟内存vitual memory(vm)。 
+	
+      (3) memcached 没考虑持久化
+          redis有持久化，并有多样化的存储策略
+
+      (4) memcached没有主从备份
+	  redis有，主要做高并发读时候的负载均衡
+	
+      (5) 网络IO层面来说，
+          memcached是多线程非阻塞IO复用。
+          redis是单线程IO复用。
+	  总结：缓存系统一般认为是高IO低计算(CPU)，
+	        而单线程可以最大程度发挥一个线程的IO性能，
+		加之IO复用，可以使单个线程高效响应多客户端的并发请求。
+		属于简单模式解决所对应的实际问题。
+		所以，redis在很多场景下是胜过mem的。
+		基于此，不建议在redis上使用大数据集合下的交叉并等统计计算，因为单线程IO复用模型不适合这种IO模式的计算。
+		redis之所以提供，是为了丰富API的交互性，减少客户端的复杂性，当然小数据做这些统计是没有问题的，主要是不会
+		长时间阻塞住IO资源。
+	  
+       (6) mem当数据库超过最大值时，会采用lru(least recently used)将超出的key和对应的value给remove掉，即会丢缓存数据。
+           redis可以不丢数据，当超过最大可使用内存时，如果开启virtual memory选项会根据lru算法swap相关的value到磁盘中。
+	   当然，redis索引的全部key是在内存中的，只会将相应的value的值swap到硬盘中。
+	   但是如果redis达到最大可使用内存，但没有开启vm选项，则这时停止写入服务，但读依旧正常开放。
+
+3、redis重要参数
+   daemonize no  是否以守护线程方式打开，即前台和后台服务的区别
+   pidfile /var/run/redis.pid  : 进程启动后pid值的存放位置，用以标记该redis进程已经启动，不能第二次启动
+   port 6379  ：服务占用端口
+   bind 127.0.0.1   ：服务绑定的ip地址,一般不写该址，或者写成0.0.0.0也是不限制IP地址请求的来源
+   timeout 10 ：一般设置成0，即服务端永远不会主动close客户端。
+   loglevel debug，还有verbose,notice,warn等，一般设置成notice最通用
+   logfile stdout ：输出到控制台，如果写文件路径，则重定向文件当中
+   databases 16 :一个redis实例，可以支持16个隔离的数据库,通过select来选择不同的数据库即可。
+   save <seconds> <changes>： 数据保存到磁盘的保存策略
+       save 900 1
+       save 300 10
+       save 60 10000
+   rdbcompression yes
+   dbfilename dump.rdb
+   dir ./
+   slaveof <masterip> <masterport>
+   masterauth <master-password>
+   requirepass foobared
+   maxclients 128
+   maxmemory <bytes> 
+   appendonly no ：设置保证每条redis的修改操作是否写入到日志当中，保证每条数据不会因为插入后还没到守护线程将其保存到磁盘时就发生宕机等情况产生数据丢失的情况。
+   appendfilename appendonly.aof ：如果设置上边值为yes,那么其落地文件的名称
+   appendfsync no/always/everysec : 
+        该属性亦为设置redis的内存与磁盘文件的一致性。
+	no: 代表从不在违反" save <seconds> <changes>"的约定下去保存数据到磁盘。
+	always: 每当有数据修改，则需要客户端调用相关保存命令去将数据范地。
+	everysec:上述折衷方案，每秒当发数据修改时就刷新内存到磁盘
+	我一般写成no,为了提高性能，同时也允许极少量数据的丢失
+   vm-enabled no ：是否开启虚拟内存功能模块
+
+5、redis应用场景
+   5.1 高并发下的kv缓存(rdbms+redis配合为多见)(新浪微博)
+          满足数据的二八原则，把其中的二部分甚至更多放入redis即可，提高读写并发，减少后台rdbms的压力。
+   5.2 关系型数据库rdbms的替代(小型项目发布)
+          简单灵巧，无安装
+   5.3 消息队列(单机爬虫、分布式爬虫等一切符合生产者消费者模式的场景)
+           推荐大家做爬虫时好好练,如天亮类火车头采集器等都如此使用，效果非常好
+   5.4 数据持久化中间件(天亮微博采集器)
+            天亮微博采集器中的各个用来判重和增量抓取的布隆过滤器，
+	    第一版是自写java io来用守护线程搞定。
+	    第二版是将对象序列化后直接存储redis实例当中，代码量和效果都达到要求。

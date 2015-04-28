@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* debug console style */
+.rl_console{
+	height:55%;
+	width:90%;
+	position:fixed;
+	bottom:0;
+	left:5%;
+	z-index:100;
+	font-size:14px;
+	background-color:#E8F2FE;
+	overflow:auto;
+}
+.rl_console table,
+.rl_console td,
+.rl_console th{
+	font-size:14px;
+}
+.rl_console .rl_csl_msg,
+.rl_console .rl_csl_warn,
+.rl_console .rl_csl_err{
+	display:none;
+	padding:5px 10px;
+	border-bottom:dashed 1px #ccc;
+}
+.rl_console .rl_csl_msg{
+	color:black;
+}
+.rl_console .rl_csl_warn{
+	color:#FF8000;
+}
+.rl_console .rl_csl_err{
+	color:red;
+}
+.rl_console .rl_csl_err a.desc_link{
+	color:red;
+	font-weight:bold;
+	text-decoration:none;
+}
+.rl_console .rl_csl_err a.desc_link:hover{
+	text-decoration:underline;
+}
+.rl_console .rl_csl_err .desc_ctn{
+	border:dashed 1px #ACBDC6;
+	margin:.5em;
+	padding:.5em;
+}
+
+.rl_console_showall .rl_csl_msg,
+.rl_console_showall .rl_csl_warn,
+.rl_console_showall .rl_csl_err,
+.rl_console_showmsg .rl_csl_msg,
+.rl_console_showwarn .rl_csl_warn,
+.rl_console_showerr .rl_csl_err{
+	display:block;
+}
+.rl_console .rl_kvpairs{
+	border-collapse:collapse;
+}
+.rl_console .rl_kvpairs caption{
+	white-space:nowrap;
+}
+.rl_console .rl_kvpairs th,
+.rl_console .rl_kvpairs td{
+	padding:3px 5px;
+	border:solid 1px #ACBDC6;
+}

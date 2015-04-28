@@ -1,0 +1,1 @@
+orderjs.define("app.opoa.cookieMemory",["lib.data.store.engine"],function(){});

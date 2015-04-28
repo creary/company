@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"
+        >
+       
+    <context:component-scan base-package="dao"/>
+    <context:component-scan base-package="service"/>
+    <context:component-scan base-package="web"/>
+
+   <!--定义一个数据源-->
+   <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+         destroy-method="close"
+         p:driverClassName="com.mysql.jdbc.Driver"
+         p:url="jdbc:mysql://localhost:3306/sampledb"
+         p:username="root"
+         p:password="******"/>
+   <!--定义JDBC模板bean-->
+   <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"
+         p:dataSource-ref="dataSource"/>
+
+    <!--配置事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+          p:dataSource-ref="dataSource"/>
+    <!--通过aop配置事务增强-->
+    <aop:config proxy-target-class="true">
+        <aop:pointcut id="serviceMethod" expression="execution(* service..*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod"/>
+    </aop:config>
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
+
+
+
+
+    <bean id="car1" class="ForStudy.Car"
+          p:brand="保时捷"
+          p:color="蓝色"
+          p:maxSpeed="200"/>
+    <bean id="car2" class="ForStudy.Car">
+        <property name="brand" value="nihao"/>
+        <property name="color" value="woqu"/>
+        <property name="maxSpeed" value="201"/>
+    </bean>
+
+
+</beans>

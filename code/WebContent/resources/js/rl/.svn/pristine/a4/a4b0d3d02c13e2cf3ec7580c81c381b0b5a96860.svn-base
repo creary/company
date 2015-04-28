@@ -1,0 +1,6 @@
+/**
+ * @fileOverview StateObserver class.
+ * @change
+ 	#1 by prcjack Creates file.
+ */
+orderjs.define("lib.util.StateObserver",function(){rl.util.StateObserver=rl.createClass({parent:rl.util.EventProvider,construct:function(){rl.isPrototyping(arguments[0])||(rl.util.StateObserver.parent.apply(this,arguments),this.initialize.apply(this,arguments))},members:{states:null,_ready:!1,initialize:function(t){(rl.isNonNullStr(t)||rl.isArray(t))&&(t={states:t}),rl.ext(this,t),this._readyStates={},rl.isNonNullStr(this.states)?this.states=this.states.split(","):rl.isArray(this.states)||(this.states=[]),this.states=rl.map(this.states,function(t){return rl.trim(t.toLowerCase())})},isReady:function(){if(this._ready||!this.states.length)return!0;var t=this._readyStates;return rl.every(this.states,function(e){return 1==t[e]},this)},update:function(t){rl.isNonNullStr(t)&&(t=rl.trim(t.toLowerCase()),this._readyStates[t]=!0,rl.debug(this+" update(): Ready state = "+t),this.isReady()&&(this._ready=!0,this.fireEvent("ready"),rl.debug(this+" update(): All ready on state = "+t)))},toString:function(){return"[object rl.util.StateObserver]"}}})});

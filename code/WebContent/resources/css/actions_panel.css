@@ -1,0 +1,58 @@
+@charset "utf-8";
+/**
+ * @fileOverview action buttons(links) group, with shortcuts in panel header.
+ * @change
+    #1 by prcjack @2012/8/21 Creates file.
+*/
+
+.soof_actions_panel .ap_header{
+	border-bottom:solid 1px #d7d7d7;
+	background-color:#f6f6f6;
+	padding:1em 1em 5px 1em;
+}
+.soof_actions_panel{
+	margin-bottom:1em;
+}
+.soof_actions_panel .ap_title_col{
+	border-right:solid 1px #ccc;
+	padding-right:25px;
+	width:80px;
+}
+.soof_actions_panel .ap_title_col .title{
+	white-space:nowrap;
+}
+.soof_actions_panel .ap_title_col .title img{
+	border:0 none;
+}
+.soof_actions_panel .ap_shotcuts_col{
+	padding-left:20px;
+}
+.soof_actions_panel .ap_shotcuts_col  .shortcuts_links li{
+	float:left;
+}
+.soof_actions_panel .shortcuts_links{
+	list-style:none;
+}
+.soof_actions_panel .shortcuts_links li{
+	margin-right:2em;
+	padding:5px 0;
+}
+.soof_actions_panel .ap_body{
+	padding:1em;
+}
+.soof_actions_panel .ap_body .group{
+	margin-top:1em;
+}
+.soof_actions_panel .actions_cols{
+	width:100%;
+	table-layout:fixed;
+}
+.soof_actions_panel .actions_cols .actions_title{
+	text-align:left;
+	font-weight:normal;
+	height:25px;
+}
+.soof_actions_panel .actions_cols .actions_col{
+	width:25%;
+	vertical-align:top;
+}

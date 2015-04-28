@@ -1,0 +1,243 @@
+@charset "utf-8";
+.rl_btn{
+	cursor:default;
+	-moz-user-select:none ;/*for ff*/
+	-webkit-user-select: none; /*for webkit*/
+    margin:1px;
+}
+.rl_btn button{
+	padding:0 2px;
+	padding:2px 5px 0 5px\9;/*for ie */
+	*width:16px;
+	overflow:visible;/*for ie*/
+	height:22px;
+    background:transparent;
+	border:none; 
+	font-size:12px; 
+    -moz-outline:0 none;
+    outline:0 none;
+}
+.rl_btn_no_border .rl_btn_left, .rl_btn_no_border .rl_btn_right, .rl_btn_no_border .rl_btn_center{
+	background-position:0 100px;
+}
+.rl_btn_left, .rl_btn_right{
+	width:3px;
+	height:22px;
+	font-size:1px;
+    line-height:1px;
+	background:url(../image/default/button/btn_sprite.gif) no-repeat;
+}
+.rl_btn_right{
+    background-position:0 -44px;
+}
+.rl_btn_left i, .rl_btn_right i{
+	display:block;
+    width:3px;
+}
+.rl_btn_center{
+	white-space: nowrap;
+	background:url(../image/default/button/btn_sprite.gif) repeat-x 0 -22px;
+}
+.rl_btn .with_icon{
+	background: no-repeat 0 center;
+	padding-left:20px;
+	*padding-left:22px;/*for ie*/
+	*padding-right:5px;
+}
+.rl_btn .icon_only{
+	width:16px !important;
+	padding:0 !important;
+}
+.rl_btn_disabled *{
+	color:gray !important;
+	cursor:default !important;
+}
+.rl_btn .popup_arrow{
+	background:url(../image/default/button/arrow_down.gif) right no-repeat;
+	background-position:10px right !important;
+	padding-right:5px;
+}
+.popup .popup_arrow{
+	background:url(../image/default/button/arrow_right.gif) right no-repeat;
+	background-position:6px right !important;
+	padding-right:0;
+}
+/*onmouseover*/
+.rl_btn_over .rl_btn_left{
+    background-position:0 -66px;
+}
+.rl_btn_over .rl_btn_center{
+    background-position:0 -88px;
+}
+.rl_btn_over .rl_btn_right{
+    background-position:0 -110px;
+}
+/*onmousedown || actived*/
+.rl_btn_down .rl_btn_left{
+    background-position:0 -132px;
+}
+.rl_btn_down .rl_btn_center{
+    background-position:0 -154px;
+}
+.rl_btn_down .rl_btn_right{
+    background-position:0 -176px;
+}
+/*
+focused, this is same as actived state at version 1.0;
+*/
+.rl_btn_focused .rl_btn_left{
+    background-position:0 -132px;
+}
+.rl_btn_focused .rl_btn_center{
+    background-position:0 -154px;
+}
+.rl_btn_focused .rl_btn_right{
+    background-position:0 -176px;
+}
+/*disabled*/
+.rl_btn_disabled .rl_btn_left{
+    background-position:0 -198px;
+}
+.rl_btn_disabled .rl_btn_center{
+    background-position:0 -220px;
+}
+.rl_btn_disabled .rl_btn_right{
+    background-position:0 -242px;
+}
+
+button.width_fit_ctn{
+    height:16px;
+    *height:;
+	line-height:22px;
+	*line-height:;
+	text-align:left;
+	width:16px;
+	overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+/*
+inline button 
+*/
+button.inline{
+    border:0 none;
+    background:transparent;
+    cursor:default;
+    margin:-1px;
+    margin:0\9;/*for ie*/
+	padding:0;
+	*padding-right:1px;/*for ie6, ie7*/
+	*padding-bottom:1px;/*for ie6, ie7*/
+    overflow:visible;/*for ie*/
+}
+button.inline div {
+	height:21px;
+	line-height:22px;
+	*line-height:21px;
+}
+
+button .text_ctn {
+	padding:0 5px;
+}
+
+/*
+split button 
+*/
+.rl_btn .split_ctrl{
+	/*width:12px;
+	height:21px;*/
+	background: right 0 no-repeat;
+	font-size:1px;
+}
+.rl_btn .split_ctrl_ctn{
+	/*width:12px;*/
+	vertical-align:middle;
+}
+.rl_btn_over .split_ctrl{
+    background-position:right -21px;
+}
+.rl_btn_down .split_ctrl{
+    background-position:right -21px;
+}
+.rl_btn_down .united{
+    background-position:right 0;
+}
+.rl_btn_focused .split_ctrl{
+    background-position:right -21px;
+}
+.rl_btn_disabled .split_ctrl{
+    background-position:right -42px;
+}
+.rl_btn .split_arrow{
+	background-image:url(../image/default/button/split_arrow_sprite.gif);
+}
+
+/*
+icon button 
+*/
+.rl_icon_btn{
+}
+.rl_icon_btn button{
+    border:0 none;
+	padding:0;
+	overflow:hidden;
+    background:transparent;
+	background-repeat:no-repeat;
+	vertical-align:middle;
+    cursor:default;
+}
+.rl_icon_btn .icon{
+	background-position:center;
+	background-repeat:no-repeat;
+}
+.rl_icon_btn_no_border button{
+	background-position:100px;
+}
+/*
+2 kinds of size: size18 and size16
+provide yours with following way:
+*/
+.rl_icon_btn button.size18{
+	width:18px;
+	height:18px;
+	background-image:url(../image/default/button/icon_btn_18_sprite.gif);
+}
+.rl_icon_btn button.size16{
+	width:16px;
+	height:16px;
+	background-image:url(../image/default/button/icon_btn_16_sprite.gif);
+}
+.rl_icon_btn img.size18{
+	width:16px;
+	height:16px;
+}
+.rl_icon_btn img.size16{
+	width:11px;
+	*width:16px;
+	height:16px;
+}
+.rl_icon_btn_over button.size18{
+    background-position:0 -18px;
+}
+.rl_icon_btn_down button.size18{
+    background-position:0 -36px;
+}
+.rl_icon_btn_focused button.size18{
+    background-position:0 -36px;
+}
+.rl_icon_btn_disabled button.size18{
+    background-position:0 -54px;
+}
+
+.rl_icon_btn_over button.size16{
+    background-position:0 -16px;
+}
+.rl_icon_btn_down button.size16{
+    background-position:0 -32px;
+}
+.rl_icon_btn_focused button.size16{
+    background-position:0 -32px;
+}
+.rl_icon_btn_disabled button.size16{
+    background-position:0 -48px;
+}

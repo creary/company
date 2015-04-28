@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* CSS Document */
+body.soof_oneslide{
+	font-family:"微软雅黑";
+	font-size:14px;
+	margin:0;
+	padding:0;
+	background-color:#666;
+}
+.soof_oneslide .viewport{
+	max-width:500px; 
+	margin:0 auto;
+	background-color:#eee;
+}
+.soof_oneslide .header{
+	height:45px;
+	border-bottom:solid 1px #ccc;
+	text-align:center;
+}
+.soof_oneslide .logo{
+	margin:8px 0 0 8px;
+	height:30px;
+}
+.soof_oneslide .main{
+	position:relative;
+	top:0;
+}
+.soof_oneslide .float_tip{
+	z-index:20;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	text-align:right;
+}
+.soof_oneslide .float_tip .content_wrap{
+	display:inline-block;
+	padding:.3em .5em;
+	margin:1em;
+	border:solid 1px #ddd;
+	border-radius:5px;
+	color:#f2f2f2;
+	text-align:center;
+	background:rgba(99, 99, 99, 0.5);
+}
+.soof_oneslide .section_jump{
+	padding:20px 0;
+	border-top:solid 1px #ccc;
+	text-align:center;
+}
+.soof_oneslide .agreement_ctn{
+	padding-top:6px;
+	color:#999;
+}
+.soof_oneslide .agreement_ctn a{
+	color:#999;
+}
+.soof_oneslide .jump_btn{
+	height:40px;
+	width:200px;
+	opacity:1;
+	border:solid 1px #ccc;
+	border-radius:5px;
+	background-color:#09C;
+	color:#fff;
+	font-size:14px;
+}
+.soof_oneslide .jump_btn:hover{
+	opacity:0.8;
+}
+.soof_oneslide .copyright{
+	padding:24px 0;
+	line-height:24px;
+	text-align:center;
+}
+.soof_oneslide .slides_nav{
+	z-index:20;
+	position:fixed;
+	left:0;
+	width:100%;
+	bottom:10px;
+	text-align:center;
+}
+.soof_oneslide .slides_nav i{
+	display:inline-block;
+	margin:5px;
+	width:10px;
+	height:10px;
+	border-radius:5px;
+	border:solid 1px #666;
+	background-color:rgba(255, 255, 255, 0.85);
+}
+.soof_oneslide .slides_nav i.active{
+	background-color:#0C0;
+}
+
+@media (min-width: 700px) {
+.soof_oneslide .header{
+	height:60px;
+}
+.soof_oneslide .logo{
+	margin:12px 0 0 12px;
+	height:36px;
+}
+}
+
+/* Swipe 2 required styles */
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  min-height:200px;
+}
+.swipe_wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe_wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+.swipe_wrap > div > img {
+  width:100%;
+}
+
+/* END required styles */

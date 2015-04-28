@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gateways>
+   <gateway>apple.com</gateway>
+   <gateway>thinkdifferent.us</gateway>
+   <gateway>akadns.org</gateway>
+   <gateway>akamai.net</gateway>
+   <gateway>edgekey.net</gateway>
+   <gateway>akadns.net</gateway>   
+   <gateway>akamaiedge.net</gateway> 
+   <gateway>apple.com.edgesuite.net</gateway>
+   <gateway>ibook.info</gateway>
+   <gateway>appleiphonecell.com</gateway>
+   <gateway>airport.us</gateway>
+   <gateway>itools.info</gateway>  
+</gateways>

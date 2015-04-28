@@ -1,0 +1,1 @@
+orderjs.define("lib.dnd.drag",["lib.dnd.BehaviorBase"],function(){rl.dnd.drag=new rl.dnd.BehaviorBase({eventNameOfDnd:"drag",eventNameOfB4Dnd:"beforedrag",eventNameOfB4DndStart:"dragstart",eventNameOfDuringDnd:"draging",eventNameOfDndEnd:"dragend"}),rl.dnd.drag.toString=function(){return"[object rl.dnd.drag]"}});

@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* layout.css */
+.rl_layout_container {
+    overflow:hidden !important;
+	background-color:#D8EAF8;
+}
+.rl_layout_north, .rl_layout_east, .rl_layout_south, .rl_layout_west, .rl_layout_center,
+.rl_layout_abs, .rl_layout_split_h, .rl_layout_split_v{
+    overflow:hidden !important;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:5;
+}
+.rl_layout_center{
+	background-color:#fff;
+}
+.rl_layout_split_h, .rl_layout_split_v{
+    z-index:10;
+    font-size:1px;
+    background:center no-repeat #eee;
+    -moz-user-select:none ;/*for ff*/
+}
+.rl_layout_split_h{
+    height:5px;
+    background-image:url(../image/default/layout/ne-handle-dark.gif);
+    cursor:n-resize;
+}
+.rl_layout_split_v{
+    width:5px;
+    background-image:url(../image/default/layout/ne-handle-dark.gif);
+    cursor:e-resize;
+}
+.rl_layout_hidden {
+    left:-10000px;
+    top:-10000px;
+}
+

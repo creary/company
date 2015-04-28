@@ -1,0 +1,56 @@
+@charset "UTF-8";
+.rl_progressbar{
+	width:100%;
+}
+.rl_progressbar .pb_bar,
+.rl_progressbar .pb_progress,
+.rl_progressbar .pb_text{
+	height:100%;
+	border:none;
+}
+.rl_progressbar .main_wrapper td.pb_bar_wrap{
+	height:15px;
+	line-height:15px;
+	width:100%;
+	border:none;
+}
+.rl_progressbar .main_wrapper .pb_text div{
+	height:100%;
+	width:30px;
+	padding:0 5px;
+	text-align:right;
+}
+.rl_progressbar .pb_bar{
+	background:#fff url(../image/default/indicator/pb_sprite.gif) 0 -75px repeat-x;
+	border:solid 1px #ccc;
+	font-size:1px;
+}
+.rl_progressbar .pb_progress{
+	background:url(../image/default/indicator/pb_sprite.gif) repeat-x;	
+}
+
+.rl_progressbar .blue .pb_progress{
+	background-position:0 0;
+}
+.rl_progressbar .green .pb_progress{
+	background-position:0 -15px;
+}
+.rl_progressbar .yellow .pb_progress{
+	background-position:0 -30px;	
+}
+.rl_progressbar .orange .pb_progress{
+	background-position:0 -45px;	
+}
+.rl_progressbar .red .pb_progress{
+	background-position:0 -60px;	
+}
+/*
+waitbar
+*/
+.rl_waitbar{
+	height:12px;
+}
+.rl_waitbar img.ani{
+	width:100%;
+	height:12px;
+}

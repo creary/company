@@ -1,0 +1,75 @@
+@charset "UTF-8";
+.rl_map{
+	position:relative;
+	left:0;
+	top:0;
+	overflow:auto;
+	background-color:#fff;
+}
+.rl_map_layer{
+	position:absolute;
+	left:0;
+	top:0;
+	overflow:visible;
+	background:none;
+}
+.rl_map_bg_layer{
+	z-index:1;
+}
+.rl_map_draw_layer{
+	z-index:10;
+}
+.rl_map_overlay_layer{
+	z-index:20;
+}
+
+.rl_map_icon_node{
+	position:absolute;
+	left:0;
+	top:0;
+	cursor:default;
+	/*border:solid 1px #000;*/
+}
+.rl_map_icon_node .text{
+	text-align:center;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+	padding:1px;/* pading 1px for focused 1px border-width style. */
+	/*width:100%;
+	height:100%;*/
+}
+.rl_map_icon_node .icon_wrap{
+	position:relative;
+	left:0;
+	top:0;
+	text-align:center;
+	vertical-align:middle;
+	padding-bottom:3px;
+	/*width:100%;
+	border:solid 1px red;*/
+}
+.rl_map_icon_node .status_icon{
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:16px;
+	height:16px;
+	background:center no-repeat;
+}
+.rl_map_icon_node .status_level_1{
+	background-image:url(../image/default/map/level_1.gif);
+}
+.rl_map_icon_node .status_level_2{
+	background-image:url(../image/default/map/level_2.gif);
+}
+.rl_map_icon_node_selected .text{
+	background-color:#C1DBFC;
+}
+.rl_map_icon_node_focused .text{
+	border:dotted 1px #666;
+	padding:0;
+}
+.rl_shape_line{
+	position:absolute;
+}

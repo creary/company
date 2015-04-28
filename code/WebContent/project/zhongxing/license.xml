@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<License Developer="GuangZhou Soofound Software Corporation">
+	<CustomerDetails>
+		<Property Name="ProductID" Value="SF013" />
+		<Property Name="Vendor" Value="广州市虹联信息技术有限公司" />
+		<Property Name="Customer" Value="杭州中信智能工程有限公司" />
+		<Property Name="MachineID" Value="soofac-vo57-nw8e" />
+		<Property Name="LicenseType" Value="Registered" />
+		<Property Name="GenerationDate" Value="2015-04-27" />
+		<Property Name="ExpiryDate" Value="2020-01-01" />
+	</CustomerDetails>
+	<ProductDetails>
+		<Property Name="ProductName" Value="SooFac" />
+		<Property Name="ProductType" Value="Standard" />
+		<Property Name="Version" Value="3.5.12" />
+		<Property Name="ReleaseDate" Value="2015-05-01" />
+		<Property Name="DeviceNumber" Value="1000" />
+		<Property Name="Boot" Value="/project/zhongxing/boot.xml" />
+	</ProductDetails>
+	<Code>b6acf8c2a8e2fcd0abd3f2f91521c548463d83387f0beccc033a30fbc40f01c33af45fd4e63dbd895529291341881a766c6f56e606ecc3c9e3a4eb4bdca196e3d7e21bb5bd2b9b1cde4cdc83763cc3d1f3a0ce41ce5b4204b7ee421e4ecbdccbfe11682975ef5df39b452b16e3e9d07e4bb215076aa840cfa01783afed776d7c</Code>
+</License>

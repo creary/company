@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+.rl_toggle_button,
+.rl_toggle_button i.icon{
+    background: url("../image/default/button/toggle_button.png") no-repeat 0 0;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    vertical-align: top;
+}
+.rl_toggle_button{
+	width:80px;
+	max-width:150px;
+}
+.rl_toggle_button i.icon{
+	width:31px;
+}
+.rl_toggle_button{
+	background-position:left 0;
+}
+.rl_toggle_button:hover{
+	background-position:left -30px;
+}
+.rl_toggle_button i.icon{
+	float:right;
+	background-position:right 0;
+}
+.rl_toggle_button:hover i.icon{
+	background-position:right -30px;
+}
+.rl_toggle_button.disabled{
+	background-position:left -60px;
+}
+.rl_toggle_button.disabled:hover{
+	background-position:left -90px;
+}
+.rl_toggle_button.disabled i.icon{
+	float:right;
+	background-position:right -60px;
+}
+.rl_toggle_button.disabled:hover i.icon{
+	background-position:right -90px;
+}

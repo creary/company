@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+.soof_SignInTabPanel{
+	font-size:14px;
+	line-height:1.5em;
+}
+.soof_SignInTabPanel .inp{
+	position:relative;
+	left:0;
+	top:0;
+	margin-bottom:12px;
+	height:40px;
+	line-height:40px;
+	border:solid 1px #ddd;
+	background-color:#fff;
+}
+.soof_SignInTabPanel .inputline{
+	margin-top:12px;
+}
+.soof_SignInTabPanel .inp input,
+.soof_SignInTabPanel .inp .mask{
+	position:absolute;
+	left:40px;
+	top:8px;
+	height:24px;
+	line-height:24px;
+	font-size:14px;
+}
+.soof_SignInTabPanel .inp input{
+	width:248px;
+	border:0 none;
+	background-color:#fff;/* force some system custom bg set */
+}
+.soof_SignInTabPanel .inp .mask{
+	display:none;
+	color:#999;
+	cursor:text;
+}
+.soof_SignInTabPanel .inp .icon{
+	position:absolute;
+	left:12px;
+	top:12px;
+	width:16px;
+	height:16px;
+	border:none;
+	background:url(img/icons.gif) no-repeat 0 16px;
+}
+.soof_SignInTabPanel .inp .icon_user{
+	background-position:0 0;
+}
+.soof_SignInTabPanel .inp .icon_psw{
+	background-position:0 -16px;
+}
+.soof_SignInTabPanel .inp .icon_arrow{
+	background-position:0 -32px;
+}
+.soof_SignInTabPanel .inp .icon_phone{
+	background-position:0 -48px;
+}
+.soof_SignInTabPanel .btn{
+	margin:0;
+	opacity:1;
+	background-color:#09C; 
+	border:none;
+	font-size:14px;
+	color:#fff;
+}
+.soof_SignInTabPanel .btn:hover{
+	opacity:0.75;
+}
+.soof_SignInTabPanel .btn.disabled{
+	background-color:#ccc;
+	color:#777;
+	cursor:not-allowed;
+}
+.soof_SignInTabPanel .inp .unite_btn{
+	position:absolute;
+	right:0;
+	top:0;
+	height:100%;
+	padding:0 5px;
+}
+.soof_SignInTabPanel .primary{
+	width:100%;
+	height:40px;
+	font-size:16px;
+	font-weight:bold;
+}
+  
+.soof_SignInTabPanel .inp_captcha{
+	float:left;
+	width:220px;
+}
+.soof_SignInTabPanel .inp_captcha input{
+	width:170px;
+}
+.soof_SignInTabPanel .captcha{
+	float:right;
+	margin-top:10px;
+	cursor:pointer;
+}
+
+.soof_SignInTabPanel .show_mask .mask{
+	display:inline;
+}
+
+@media screen and (min-width:800px){
+.smart_layout .mobile_only{
+	display:none;
+}
+}
+@media screen and (max-width:400px){
+.smart_layout .soof_SignInTabPanel .spacer{
+	height:1px;
+}
+}
+/* keyboard_padding: on mobile when the keyboard popup, 
+   we need to make padding at bottom to make the inputs easily to see 
+ */
+body.keyboard_padding{
+	padding-bottom:250px;
+}

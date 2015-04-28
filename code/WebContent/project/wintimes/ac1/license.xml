@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<License Developer="GuangZhou Soofound Software Corporation">
+	<CustomerDetails>
+		<Property Name="ProductID" Value="SF003" />
+		<Property Name="Vendor" Value="广州市虹联信息技术有限公司" />
+		<Property Name="Customer" Value="无限城市(北京)科技有限公司" />
+		<Property Name="MachineID" Value="ulqa-mfhe-ulqa-02z/" />
+		<Property Name="LicenseType" Value="Registered" />
+		<Property Name="GenerationDate" Value="2015-02-11" />
+		<Property Name="ExpiryDate" Value="2020-01-01" />
+	</CustomerDetails>
+	<ProductDetails>
+		<Property Name="ProductName" Value="SooFac" />
+		<Property Name="ProductType" Value="Standard" />
+		<Property Name="Version" Value="3.5.0" />
+		<Property Name="ReleaseDate" Value="2015-02-10" />
+		<Property Name="DeviceNumber" Value="500" />
+		<Property Name="Boot" Value="/project/wintimes/boot.xml" />
+	</ProductDetails>
+	<Code>547933dc0ef113571267875f21c5dad9b0ba8ff4a47133eea5bba0d95a2be347c75a03cebb82560f89119482e95dd5c6353366403e4bc7db0642ece67e8df882cbe27e37bf4568828cda4b2b6b0825c19884b7ea41883477705c863317ee0810f9e405afcb7334e943ca88e067fd6e5632efd63b88508e130dab0dd054b8f7f0</Code>
+</License>

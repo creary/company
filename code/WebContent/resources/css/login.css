@@ -1,0 +1,203 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**
+ * login page style.
+ */
+
+.head{
+	height:120px;
+}
+.head .logo{
+	margin:60px 0 0 80px;
+	border:none;
+}
+.main{
+	position:relative;
+	left:0;
+	top:0;
+	height:370px;
+	padding-top:30px;
+}
+.main .banner_wrapper{
+	margin:0 auto;
+	height:303px;
+	background:#EBF3F8 url(../image/default/login/banner_bg_blue.jpg) repeat-x;
+}
+.main .banner{
+	margin-top:2px;
+	border:none;
+}
+.login{
+	position:absolute;
+	right:10%;
+	top:0;
+	width:370px;
+	height:370px;
+	border:solid 1px #ccc;
+	background-color:#f8f8f8;
+}
+.login a{
+	color:#666;
+}
+.login a:hover{
+	color:#FC0;
+}
+.login .login_viewport{
+	width:300px;
+	margin:20px auto;
+}
+.login .title{
+	color:#666;
+	font-size:20px;
+}
+.login .r{
+	float:right;
+}
+.login .inputs{
+	margin-top:20px;
+}
+.login .inp{
+	position:relative;
+	left:0;
+	top:0;
+	margin-bottom:12px;
+	height:40px;
+	line-height:40px;
+	border:solid 1px #ddd;
+	border-radius:5px;
+	background-color:#fff;
+}
+.login .inputline{
+	margin-top:12px;
+	clear:both;
+}
+.login .inp input,
+.login .inp .mask{
+	position:absolute;
+	left:40px;
+	top:8px;
+	height:24px;
+	line-height:24px;
+	font-size:14px;
+}
+.login .inp input{
+	width:248px;
+	border:0 none;
+	background-color:#fff;/* force some system custom bg set */
+}
+.login .inp .mask{
+	display:none;
+	color:#999;
+	cursor:text;
+}
+.login .inp .icon{
+	position:absolute;
+	left:12px;
+	top:12px;
+	width:16px;
+	height:16px;
+	border:none;
+	background:url(../image/default/login/icons.gif) no-repeat 0 16px;
+}
+.login .inp .icon_user{
+	background-position:0 0;
+}
+.login .inp .icon_psw{
+	background-position:0 -16px;
+}
+.login .inp .icon_arrow{
+	background-position:0 -32px;
+}
+.login .inp_captcha{
+	float:left;
+	width:160px;
+}
+.login .inp_captcha input{
+	width:110px;
+}
+.login .captcha{
+	margin:10px 5px;
+	cursor:pointer;
+}
+.login button.btn.primary{
+	width:100%;
+	padding:10px 1em;
+	font-size:16px;
+	font-weight:bold;
+}
+
+.login .show_mask .mask{
+	display:inline;
+}
+.login .err_tip{
+	margin-top:1em;
+	height:18px;
+	color:red;
+	overflow:hidden;
+}
+.login .desc{
+	color:#999;
+}
+.foot{
+	width:100%;
+	position:absolute;
+	left:0;
+	bottom:0;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	background-color:#f2f2f2;
+}
+
+.smart_layout .head{
+	height:100px;
+	text-align:center;
+}
+.smart_layout .head .logo{
+	margin:0;
+	margin-top:40px;
+}
+.smart_layout .main{
+	height:auto;
+}
+.smart_layout .login{
+	position:static;
+	margin:0 auto;
+	height:auto;
+}
+.smart_layout .login .ad_ctn{
+	margin:0.5em 0;
+	height:200px;
+	overflow:hidden;
+}
+.smart_layout .login .spacer{
+	height:20px;
+	clear:both;
+}
+.smart_layout .foot{
+	position:static;
+	margin-top:1em;
+	background:none;
+	line-height:20px;
+}
+
+@media screen and (max-width:400px){
+.smart_layout .head{
+	height:60px;
+}
+.smart_layout .head .logo{
+	margin-top:10px;
+}
+.smart_layout .login{
+	width:auto;
+	border-left:none;
+	border-right:none;
+}
+.smart_layout .login .login_viewport{
+	margin:10px auto;
+}
+.smart_layout .login .spacer{
+	height:1px;
+}
+}

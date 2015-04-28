@@ -1,0 +1,53 @@
+@charset "utf-8";
+/**
+ * soof_login: login style for icbc.
+ * Note: this file is based on "/resources/css/login.css"
+ */
+.soof_login .login{
+	position:static;
+	height:auto;
+	margin:0 auto;
+	border:none;
+	background-color:#fff;
+}
+.soof_login .login .title{
+	height:40px;
+}
+.soof_login .login .primary{
+	width: 100%;
+}
+.soof_login .login .submit_wrap{
+	margin-top:40px;
+}
+.soof_login .foot{
+	line-height:normal;
+}
+@media (min-width:768px){
+	.soof_login .login{
+		width:400px;
+	}
+	.soof_login .login .login_viewport{
+		width:100%;
+	}
+	.soof_login .login .inp input{
+		width:350px;
+	}
+	.soof_login .login .inp_captcha{
+		width:260px;
+	}
+	.soof_login .login .inp_captcha input{
+		width:210px;
+	}
+}
+@media (max-height:400px){
+	.soof_login .main{
+		height:320px;
+		padding-top:10px;
+	}
+	.soof_login .login .title{
+		height:auto;
+	}
+	.soof_login .login .submit_wrap{
+		margin-top:20px;
+	}
+}

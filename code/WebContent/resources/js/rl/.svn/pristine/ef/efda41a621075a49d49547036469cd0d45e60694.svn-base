@@ -1,0 +1,233 @@
+@charset "utf-8";
+/**
+ * @fileOverview Grid component css.
+ * @change
+ 	#1 Create file.
+	#2 by prcjack @2013/08/12 Adds rule: rl_cell_text_*.
+	#3 by prcjack @2014/04/1 Normalize row_numberer cell padding.
+ */
+/**
+ * rl_grid: grid scope.
+ */
+.rl_grid{
+    border:solid 1px #C0DBFD;
+    height:100%;
+    /*width:100%;*/
+    cursor:default;
+    overflow:hidden;
+    position:relative;
+    left:0;
+    top:0;
+}
+.rl_grid .resize_indicator{
+    position:absolute;
+    left:-10px;
+    top:0;
+    width:0;
+    height:100%;
+    font-size:1px;
+    overflow:hidden;
+    cursor:e-resize;
+    border-right:solid 1px #000;
+}
+.rl_grid .grid_mask{
+    position:absolute;
+	z-index:1;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;	
+	cursor:wait;
+	background-color:white;
+	opacity:0.5;
+	filter: alpha(opacity=50);
+}
+.rl_grid iframe.grid_mask{
+	z-index:0;
+	filter: alpha(opacity=0);
+}
+
+/*
+head
+*/
+.rl_grid_head {
+    background:url(../image/default/grid/head.gif) repeat-x bottom;
+    height:24px;
+    line-height:24px;
+    -moz-user-select:none ;/*for ff*/
+	-webkit-user-select: none; /*for webkit*/
+    overflow:hidden;
+    position:relative;
+    left:0;
+    top:0;
+}
+.rl_grid_head .row_wrap{
+    position:absolute;
+    left:0;
+    top:0;
+}
+.rl_grid_head .row{
+    margin-right:16px;
+    height:100%;
+}
+.rl_grid_head .cell {
+    position:relative;
+    left:0;
+    top:0;
+    height:24px;
+    line-height:24px;
+    padding:0 5px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.rl_grid_head .resizer{
+    position:absolute;
+    right:0;
+    top:0;
+    width:10px;
+    height:100%;
+    border-right:solid 1px #ACD0EE;
+}
+.rl_grid_head .resizable{
+    cursor:e-resize;
+}
+.rl_grid_head .over .cell{
+    background:url(../image/default/grid/head_over.gif) repeat-x bottom;
+}
+.rl_grid_head .sorting .cell{
+    background:url(../image/default/grid/head_sorting.gif) repeat-x bottom;
+}
+.rl_grid_head .sort_arrow{
+    display:none;
+}
+.rl_grid_head .asc .sort_arrow, .rl_grid_head .dec .sort_arrow{
+    background:url(../image/default/grid/sort_asc.gif) no-repeat center;
+}
+.rl_grid_head .dec .sort_arrow{
+    background-image:url(../image/default/grid/sort_dec.gif);
+}
+.sorting .sort_arrow{
+    display:inline !important;
+}
+/* 
+body
+*/
+.rl_grid_body{
+	/*Modified by Prcjack at 2009-8-13 to fix ie7 cpu overload*/
+	width:auto !important;
+	width:100%;
+    overflow:auto;
+    background-color:#fff;
+}
+.rl_grid_body .rows_wrap{
+    border-right:solid 1px #EDEDED;
+}
+.rl_grid_body .strip_row{
+    background-color:#F9F9F9;/*F9F9F9 f5f5f5 fafafa F4F8FD*/
+}
+.rl_grid_body .cell{
+    padding:0 5px;
+    height:22px;
+    line-height:22px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    border-top:solid 1px #fff;
+    border-bottom:solid 1px #EDEDED;
+}
+.rl_grid_body .row_numberer{
+    background:#E9F4FC url(../image/default/grid/side_col.gif) repeat-y right;
+    text-align:right;
+    border-bottom:solid 1px #ACD0EE;
+}
+.rl_grid_body .rl_row_over{
+	background-color:#f2f2f2;
+}
+.rl_grid_body .rl_row_over .cell{
+    border-bottom:solid 1px #EDEDED;
+}
+.rl_grid_body .rl_row_over .row_numberer{
+    border-bottom:solid 1px #ACD0EE;
+}
+.rl_grid_body .rl_row_over .row_pointer{
+    background:url(../image/default/grid/row_pointer.gif) no-repeat center;
+}
+
+.rl_grid_body .rl_row_selected{
+    background:#C1DBFC;/* url(../image/default/grid/row_selected.gif)*/
+}
+.rl_grid_body .rl_row_selected .cell{
+    border-top:solid 1px #C1DBFC;
+    border-bottom:solid 1px #C1DBFC;
+}
+.rl_grid_body .rl_row_selected .row_numberer{
+    border-top:solid 1px #fff;
+    border-bottom:solid 1px #ACD0EE;
+}
+.rl_grid_body .rl_row_selected .row_pointer{
+    background:url(../image/default/grid/row_pointer.gif) no-repeat center;
+}
+.rl_grid_body .rl_row_focused .cell{
+    border-top:dotted 1px #666 !important;
+    border-bottom:dotted 1px #666 !important;
+}
+.rl_grid_body .rl_row_focused .row_numberer{
+    border-top:solid 1px #fff !important;
+    border-bottom:solid 1px #ACD0EE !important;
+}
+/* 
+rl_grid_pagingbar
+*/
+.rl_grid_pagingbar{
+    background:#D8E9F7 url(../image/default/grid/bg_pagingbar.gif) repeat-x;
+    height:25px;
+    border-top:solid 1px #C0DBFD;
+}
+.rl_grid_pagingbar .rl_toolbar{
+    padding-top:1px;
+    padding-bottom:0px;
+}
+
+/**
+rl_cell_text_*: cell text align.
+*/
+.rl_grid .rl_cell_text_left{
+	text-align:left;
+}
+.rl_grid .rl_cell_text_center{
+	text-align:center;
+}
+.rl_grid .rl_cell_text_right{
+	text-align:right;
+}
+
+.rl_grid.lightgray{
+    border:solid 1px #ddd;
+}
+.rl_grid.lightgray .rl_grid_head {
+    background:#f8f8f8;
+	border-bottom:solid 1px #eee;
+}
+.rl_grid.lightgray .rl_grid_head .over .cell{
+    background:#f2f2f2;
+}
+.rl_grid.lightgray .rl_grid_head .sorting .cell{
+    background:#eee;
+}
+.rl_grid.lightgray .resizer{
+    border-color:#ddd;
+}
+.rl_grid.lightgray .rl_grid_body .rl_row_over{
+	background:#f2f2f2;
+}
+.rl_grid.lightgray .rl_grid_body .row_numberer{
+    background:#f8f8f8 url(../image/default/grid/dot_lightgray.gif) repeat-y right;
+    border-color:#eee !important;
+}
+.rl_grid.lightgray .rl_grid_pagingbar{
+	background:#f8f8f8;
+    border-bottom-color:#ddd;
+	border-top-color:#eee;
+}

@@ -1,0 +1,19 @@
+{
+	"id" : "SignInTabPanel",
+	"name" : "多标签式登录面板",
+	"desc" : "",
+	"fields" : [
+		{
+			"name" : "SignInTabPanel_wechatStepTip",
+			"value" : "1. 先关注本店微信公众号，并回复 wifi；系统将回复登录用户名和密码。<br />2. 输入以上用户名和密码，然后点击登录，即可上网。"
+		},
+		{
+			"name" : "SignInTabPanel_btnBgColor",
+			"value" : "#09C"
+		},
+		{
+			"name" : "SignInTabPanel_btnTextColor",
+			"value" : "#fff"
+		}
+	]
+}

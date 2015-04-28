@@ -1,0 +1,16 @@
+{
+	"id" : "IconTile",
+	"name" : "导航磁贴",
+	"desc" : "",
+	"fields" : [
+		{
+			"name" : "IconTile_tiles",
+			"value" : "[{\"text\":\" 示例磁贴一 \",\"cols\":\"1\",\"bgColor\":\"#9b59b6\",\"icon\":\"__dirname/img/credit31_white.png\"},{\"text\":\" 示例磁贴二 \",\"cols\":\"1\",\"bgColor\":\"#f38433\",\"icon\":\"__dirname/img/businessman1_white.png\"}]",
+			"dblink" : {
+				"to" : "categories",
+				"onDelete" : "function onDelete(pageStoreStr,ids){ids+='';var id,list,listStore,idList=ids.split(','),pageStore=JSON.parse(pageStoreStr);pageStore.fields.some(function(item){if(item.name=='IconTile_tiles'){listStore=item;list=JSON.parse(item.value);return true}});if(!(typeof list=='object'&&list.forEach)){return pageStoreStr}var newList=[];list.forEach(function(item,index){var cid=''+item.cat;if(idList.indexOf(cid)==-1)newList.push(item)});listStore.value=JSON.stringify(newList);return JSON.stringify(pageStore)}",
+				"onUpdate" : "function onUpdate(pageStoreStr,id,text){var list,pageStore=JSON.parse(pageStoreStr);pageStore.fields.some(function(field){if(field.name=='IconTile_tiles'){list=JSON.parse(field.value);if(typeof list=='object'&&list.some){list.some(function(item,index){if(item.cat==id){item.text=text;field.value=JSON.stringify(list);return true}})}return true}});return JSON.stringify(pageStore)}"
+			}
+		}
+	]
+}

@@ -1,0 +1,87 @@
+{
+	"id" : "soofound.oneSlide",
+	"name" : "全屏滚动模板",
+	"desc" : "欢迎页以近满屏的大图进行轮播，用户需待轮播完毕后才能继续。",
+	"pages" : [
+		{
+			"id" : "global",
+			"name" : "整站",
+			"editable" : true
+		},
+		{
+			"id" : "welcome",
+			"name" : "欢迎页",
+			"editable" : true,
+			"previewable" : true
+		},
+		{
+			"id" : "signin",
+			"name" : "认证页",
+			"editable" : true,
+			"previewable" : true
+		},
+		{
+			"id" : "authorized",
+			"name" : "认证后页",
+			"editable" : true,
+			"previewable" : true
+		},
+		{
+			"id" : "guide",
+			"name" : "指引页",
+			"editable" : true,
+			"previewable" : true
+		},
+		{
+			"id" : "share",
+			"name" : "分享页",
+			"editable" : true
+		}
+	],
+	"fields" : {
+		"global" : [
+			{
+				"name" : "msite_logo",
+				"value" : "__dirname/img/logo.png"
+			},
+			{
+				"name" : "msite_title",
+				"value" : "免费 WiFi 上网"
+			},
+			{
+				"name" : "msite_copyright",
+				"value" : "&copy;2014 WiFi 设计团队"
+			}
+		],
+		"welcome" : [
+			{
+				"name" : "slideImages",
+				"value" : "[{\"src\":\"__dirname/img/s1.jpg\"}, {\"src\":\"__dirname/img/s2.jpg\"}]"
+			},
+			{
+				"name" : "duration",
+				"value" : 30
+			}
+		],
+		"signin" : [
+			{
+				"name" : "wechatLoginSteps",
+				"value" : "关注本店并回复'wifi'即可获取登录密码！"
+			}
+		],
+		"authorized" : [
+			{
+				"name" : "bigShows",
+				"value" : "[{\"src\":\"__dirname/img/s_big_1.jpg\",\"href\":\"\"}]"
+			},
+			{
+				"name" : "passTip",
+				"value" : "您已通过验证，马上开始您的网上冲浪吧！"
+			}
+		]
+	},
+	"snaps" : [
+		"__dirname/img/snap/welcome.jpg",
+		"__dirname/img/snap/authorized.jpg"
+	]
+}

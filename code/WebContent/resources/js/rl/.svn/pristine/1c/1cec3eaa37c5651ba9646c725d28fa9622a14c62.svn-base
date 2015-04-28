@@ -1,0 +1,104 @@
+@charset "utf-8";
+/**
+ * @fileOverview Multi-tab interface main ui style.
+ * @version 1.0.0
+ * @change
+    #1-M @2012/8/21 Modify ".banner .main" background to support ie6.
+    #2-M @2012/11/5 Modify ".qabar_left .qabar_right .qabar_center" background to support ie6.
+*/
+/*
+rl.provide("x:mti.css.mui");
+*/
+
+.rlx_mti_full_view {
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+.rlx_mti_mui {
+    cursor: default;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.rlx_mti_mui .banner{
+	height:79px;
+	background:#CDECFF url(../image/banner/banner_center.png) repeat-x;
+}
+.rlx_mti_mui .banner .bg_left{
+	height:100%;
+	background:url(../image/banner/banner_left.png) no-repeat left;
+}
+.rlx_mti_mui .banner .bg_right{
+	height:100%;
+	background:url(../image/banner/banner_right.png) no-repeat right;
+}
+/**
+ *  #1-M by prcjack @2012/8/21 Modify background to support ie6.
+ */
+.rlx_mti_mui .banner .main{
+	position:relative;
+	left:0;
+	top:0;
+	height:100%;
+	background: url(../image/banner/block_array.png) no-repeat center !important;
+	background:none;
+}
+.rlx_mti_mui .sys_menu_ctn{
+	float: right;
+	margin-right:25px;
+}
+.rlx_mti_mui .user_ctrl_bar_area{
+	float: right;
+	height:30px;
+}
+.rlx_mti_mui .user_ctrl_bar_area .left{
+	float: left;
+	height:100%;
+	line-height:100%;
+	width:4px;
+	background:0 0 no-repeat;
+	background-image:url(../image/banner/user_ctrl_sprite.png) !important;
+	background-image:url(../image/banner/user_ctrl_sprite.gif);
+}
+.rlx_mti_mui .user_ctrl_bar_area .center{
+	float: left;
+	height:100%;
+	line-height:100%;
+	background:0 -30px repeat-x;
+	background-image:url(../image/banner/user_ctrl_sprite.png) !important;
+	background-image:url(../image/banner/user_ctrl_sprite.gif);
+}
+.rlx_mti_mui .quick_access_area{
+    float: right;
+    clear: both;
+    height: 25px;
+    margin-top: 22px;
+}
+.rlx_mti_mui .quick_access_area .rl_toolbar{
+	padding-top:1px;
+}
+.rlx_mti_mui .logo{
+	position:absolute;
+	top:25px;
+	left:30px;
+}
+.rlx_mti_mui .qabar_left,
+.rlx_mti_mui .qabar_right{
+	width:10px;
+	background: no-repeat;
+	background-image:url(../image/banner/quickaccessbar_sprite.png) !important;
+	background-image:url(../image/banner/quickaccessbar_sprite.gif);
+}
+.rlx_mti_mui .qabar_center{
+	background:0 -30px repeat-x;
+	background-image:url(../image/banner/quickaccessbar_sprite.png) !important;
+	background-image:url(../image/banner/quickaccessbar_sprite.gif);
+}
+.rlx_mti_mui .qabar_right{
+	background-position:right -60px;
+}
+.rlx_mti_mui .tabpanel_ctn{
+}

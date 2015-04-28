@@ -1,0 +1,43 @@
+﻿{
+	"meta" : {
+		"total" : 30
+	},
+	"records" : [
+		{
+			"id" : "0001",
+			"username" : "13256453321",
+			"isRandom" : false,
+			"expired" : false,
+			"onlineText" : "online",
+			"timeText" : "15:37 上线",
+			"usedTimeWidth" : "34%",
+			"usedBarText" : "已用 42 分 (剩1时18分)",
+			"rxText" : "已用 25 MB",
+			"remark" : ""
+		},
+		{
+			"id" : "0002",
+			"username" : "201",
+			"isRandom" : true,
+			"expired" : false,
+			"onlineText" : "online",
+			"timeText" : "15:37 上线",
+			"usedTimeWidth" : "48%",
+			"usedBarText" : "已用 57 分 (剩1时3分)",
+			"rxText" : "已用 25 MB",
+			"remark" : ""
+		},
+		{
+			"id" : "0003",
+			"username" : "13256453321",
+			"isRandom" : false,
+			"expired" : true,
+			"onlineText" : "offline",
+			"timeText" : "15:37 上线, 16：20 下线",
+			"usedTimeWidth" : "100%",
+			"usedBarText" : "（已到期）",
+			"rxText" : "已用 32 MB",
+			"remark" : "奇道张总"
+		}
+	]
+}
