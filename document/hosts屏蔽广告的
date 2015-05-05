@@ -1,0 +1,42 @@
+127.0.0.1	localhost
+127.0.1.1	ubuntu.lan	ubuntu labofleo
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+#ad start 
+#baidu
+127.0.0.1            pos.baidu.com
+127.0.0.1            cb.baidu.com
+
+#google
+127.0.0.1            googleads.g.doubleclick.net
+
+#jingdong
+127.0.0.1            x.jd.com
+
+#paipai
+127.0.0.1            union.paipai.com
+
+##sina
+127.0.0.1            sax.sina.com.cn
+
+#taobao
+127.0.0.1            strip.taobaocdn.com
+
+#tencent
+127.0.0.1            c.gdt.qq.com
+127.0.0.1            pgdt.gtimg.cn
+
+#weibo
+127.0.0.1            s.alitui.weibo.com
+
+#youku
+127.0.0.1            static.atm.youku.com
+#ad end
+#ocsp
+117.18.237.29        ocsp.digicert.com
+

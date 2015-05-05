@@ -1,0 +1,9 @@
+--oracle 迁移表到新的表空间
+--1.修改用户默认表空间
+select * from dba_users t where t.default_tablespace='DATA01';
+
+--2.迁移表到新的表空间SQL执行语句
+select 'alter table '||v.owner||'.'|| v.table_name ||' move tablespace DATA01;' from dba_tables v where v.tablespace_name='USERS' and v.owner='QUERY';
+
+--3.创建索引重建的SQL执行语句
+select 'alter index '||w.owner||'.'|| w.index_name ||' rebuild tablespace DATA01;' from dba_indexes w where w.owner='QUERY'
