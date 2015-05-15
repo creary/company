@@ -1,0 +1,129 @@
+ab网站压力测试命令
+
+格式： ./ab [options] [http://]hostname[:port]/path
+
+-n 测试会话中所执行的请求个数，默认时，仅执行一个请求
+
+-c 一次产生的请求个数。默认是一次一个
+
+-t 测试所进行的最大秒数
+
+-v 设置显示信息的详细程度 – 4或更大值会显示头信息， 3或更大值可以显示响应代码(404, 200等), 2或更大值可以显示警告和其他信息。 -V 显示版本号并退出。
+
+4个比较长用的参数 若有其他需要man下吧
+
+一般工作中我们只用-n 和 -c：
+
+例：./ab -c 1000 -n 1000 http://127.0.0.1/index.php
+
+-n 1000 表示总请求数为1000
+
+-c 10 表示并发用户数为10
+
+http://127.0.0.1/index.php 表示这些请求的目标url
+
+
+
+#/usr/local/xiaobai/apache2054/bin/ab -c 1000 -n 1000 http://127.0.0.1/index.html.zh-cn.gb2312
+
+This is ApacheBench, Version 2.0.41-dev <$Revision: 1.121.2.12 $> apache-2.0
+
+Copyright (c) 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+
+Copyright (c) 1998-2002 The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+Completed 100 requests
+
+Completed 200 requests
+
+Completed 300 requests
+
+Completed 400 requests
+
+Completed 500 requests
+
+Completed 600 requests
+
+Completed 700 requests
+
+Completed 800 requests
+
+Completed 900 requests
+
+Finished 1000 requests
+
+
+
+Server Software：
+
+被测试web服务软件名称他来自于http响应数据的头信息
+
+Server Hostname：
+
+表示请求的url中的主机部分名称
+
+Server Port: 
+
+测试web服务器软件的监听端口
+
+Document Path:
+
+请求的url根的绝对路径
+
+Document Length:
+
+表示http响应数据的正文长度
+
+Concurrency Level:
+
+并发的用户数
+
+Time taken for tests：
+
+表示所有这些请求被处理完成所花费的时间总和
+
+Complete requests：
+
+表示总请求书
+
+Failed requests：
+
+失败的请求总数
+
+Write errors：
+
+Total transferred：
+
+所有请求的响应数据长度总和
+
+HTML transferred: 
+
+所有请求的响应数据中正文数据的总和，也就是减去了Total transferred 中的HTML响应数据中头信息的长度
+
+Requests per second:132.12 [#/sec] (mean)
+
+重点：吞吐率，他等于Complete requests / Time taken for tests（相当于 LR 中的 每秒事务数 ，后面括号中的 mean 表示这是一个平均值）
+
+Time per request: 
+
+用户平均请求等待时间，他等于Time taken for tests /（Complete requests / Concurrency Level）【相当于 LR 中的 平均事务响应时间】
+
+Time per request: 9.289 [ms] (mean, across all concurrent requests)
+
+服务器平均请求处理时间他等于Time taken for tests / Complete requests （每个请求实际运行时间的平均值）
+
+Transfer rate:
+
+请求在单位时间内从服务器获取数据的长度他等于Total transferred / Time taken for tests
+
+这个统计选项可以很好的说明服务器在处理能力达到极限时其出口带宽的需求量
+
+Percentage of the requests served within a certain time (ms)
+
+用于描述每个请求处理时间的分布情况，例如：50% 1 50%请求处理时间不超过1秒 （这里所指的处理时间是指：Time per request ）
+
+……….
+
+100% 10 100%请求处理时间不超过10秒

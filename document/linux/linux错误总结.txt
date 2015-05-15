@@ -1,0 +1,10 @@
+VIM输入中文乱码：
+
+
+
+	解决方法：首先编辑/etc/sysconfig/i18n这个文件，
+不管你装的是中文版,还是英文版.删掉原来的配置,把下面的拷贝过去
+ 
+LANG="zh_CN.GB18030"
+SUPPORTED="zh_CN.GB18030:zh_CN:zh:en_US.UTF-8:en_US:en"
+SYSFONT="latarcyrheb-sun16"
