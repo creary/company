@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>cmcc-portal-server</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>PortalServlet</display-name>
+    <servlet-name>PortalServlet</servlet-name>
+    <servlet-class>com.simpledemo.cmcc.web.CmccPortalServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PortalServlet</servlet-name>
+    <url-pattern>/PortalServlet</url-pattern>
+  </servlet-mapping>
+  <listener>
+    <listener-class>com.simpledemo.cmcc.web.linstener.StartupListener</listener-class>
+  </listener>
+</web-app>
