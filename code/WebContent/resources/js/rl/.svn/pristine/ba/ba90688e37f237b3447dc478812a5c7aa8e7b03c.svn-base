@@ -1,1 +1,0 @@
-orderjs.define("lib.data.bridge.JsonListVisitor",["lib.data.bridge.ListVisitor"],function(){rl.data.JsonListVisitor=rl.createClass({parent:rl.data.ListVisitor,construct:function(t){rl.isPrototyping(arguments[0])||rl.data.JsonListVisitor.parent.call(this,t)},members:{getValues:function(){return this.readingRecord},toString:function(){return"[object rl.data.JsonListVisitor]"}}})});

@@ -1,6 +1,0 @@
-/**
- * @fileOverview postToDialog method.
- * @change
- 	#1 by prcjack @2014/10/01 Creates file.
- */
-orderjs.define("app.opoa.postToDialog",["lib.dom.engine","lib.data.engine","app.opoa.page"],function(){function r(e,t,o){var a=(o||{}).data;if(!rl.isNonNullStr(a)&&!rl.isObject(a))return rl.page.open.apply(rl.page,arguments);var i=rl.page.open("javascript:void(0);",t,o);if(!i)return null;if(/rl/.test(String(i)))dlgDoc=i.getContentWindow().document;else try{dlgDoc=i.document,dlgDoc.write("&nbsp;")}catch(l){o.errorAlert!==!1&&alert(o.errorAlert||r.errorAlert),rl.raiseError(l,track(this,"postToDialog",l))}var n=a;rl.isNonNullStr(a)&&o.isQueryString&&(a=rl.data.decodeQS(a)),rl.isObject(a)&&(n=rl.data.encode2FS(a));var p=['<form name="mainForm" method="post" action="',e,'" style="display:none">',n,"</form>",'<script type="text/javascript">',"document.mainForm.submit();","</script>"].join("");return dlgDoc.write(p),rl.dir({url:e,name:t,data:"<textarea>"+n+"</textarea>"},"postToDialog() detail"),i}return r.errorAlert="打开页面发生错误，请刷新页面或更换浏览器重试！",r});

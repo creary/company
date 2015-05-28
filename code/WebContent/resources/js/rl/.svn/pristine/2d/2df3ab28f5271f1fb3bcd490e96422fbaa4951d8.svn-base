@@ -1,2 +1,0 @@
-/*global module */
-module.exports=function(i){"use strict";i.initConfig({uglify:{options:{mangle:{except:["Swipe"]}},dist:{files:{"build/swipe.min.js":"swipe.js"}}}}),i.loadNpmTasks("grunt-contrib"),i.registerTask("build","uglify"),i.registerTask("default","build")};

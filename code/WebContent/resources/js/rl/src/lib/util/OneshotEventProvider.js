@@ -1,6 +1,0 @@
-/**
- * @fileOverview OneshotEventProvider class.
- * @change
- 	#1 by prcjack Creates file.
- */
-orderjs.define("lib.util.OneshotEventProvider",function(){rl.util.OneshotEventProvider=rl.createClass({construct:function(){rl.isPrototyping(arguments[0])||this.initialize.apply(this,arguments)},members:{initialize:function(t){rl.ext(this,t),this._firedStore={},this._evtMgr=new rl.util.EventProvider},addEventListener:function(t,e,r){return this.hasFired(t)?e.call(r):this._evtMgr.addEventListener.apply(this._evtMgr,arguments),this},removeEventListener:function(t){if(!this.hasFired(t)){var e=this._evtMgr;e.removeEventListener.apply(e,arguments)}return this},hasFired:function(t){return rl.isNonNullStr(t)?(t=t.toLowerCase(),this._firedStore[t]):void 0},fireEvent:function(t){if(rl.isNonNullStr(t)&&!this.hasFired(t)){t=t.toLowerCase();var e,r=this._evtMgr,i=r.getEvent(t),n=this._firedStore;return n[t]=!0,i&&(e=r.fireEvent(t),r.clearEventListener(t)),e}},toString:function(){return"[object rl.util.OneshotEventProvider]"}}}),function(){var t=rl.util.OneshotEventProvider.prototype;t.on=t.addEventListener,t.un=t.removeEventListener}()});

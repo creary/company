@@ -1,1 +1,0 @@
-orderjs.define("lib.data.Tree",["lib.data.Record"],function(){rl.data.Tree=rl.createClass({parent:rl.util.EventProvider,construct:function(r){rl.isPrototyping(arguments[0])||rl.data.Tree.parent.call(this,r)},members:{toString:function(){return"[object rl.data.Tree]"}}})});

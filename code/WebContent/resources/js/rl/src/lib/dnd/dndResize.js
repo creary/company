@@ -1,1 +1,0 @@
-orderjs.define("lib.dnd.dndResize",["lib.dnd.engine"],function(){var d=(rl.dom,rl.util.CustomUIEventsMgr,rl.dnd);rl.ext(d,{})});

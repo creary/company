@@ -1,7 +1,0 @@
-/**
- * @fileOverview Defines popup form page which contains a contentBox (always wraps form)
- * @change
- 	#1 by prcjack Creates file.
-	#2 by prcjack @2014/05/29 Remove dep module("x:mti.FormHelpCard").
- */
-orderjs.define("x:mti.popupFormPage",["css>x:mti.css.info","gui.layout.engine","gui.box.Box","gui.box.Div","gui.menu.ToolBar","x:mti.groupHeaderCtrl"],function(){rl.createNamespace("rlx.mti",{createContentBox:function(e){var r;return rl.isNonNullStr(e)&&(e.startsWith("#")?(r=!1,e=e.replace("#","")):r=!0),new rl.gui.box.Div({content:e,isHtmlContent:r,iniStyle:{overflow:"auto"},autoRenderOnReady:!1})},createActionBar:function(e){var r=rl.isArray(e)?{items:e}:e;return new rl.gui.menu.ToolBar(rl.ext({_menuCss:"rl_toolbar rlx_mti_bar_popup lightgray",itemType:rl.gui.button.Button},r))},createHelpCard:function(e,r){var t=rl.isObject(e)&&!rl.isElement(e)?e:{content:e};!t.renderTarget&&t.renderTarget!==!1&&rl.isObject(r)&&r.content&&(t.renderTarget=r.content);var n=new rlx.mti.FormHelpCard(rl.ext({renderPosition:"afterbegin",autoRenderOnReady:!1},t));return r._rendered?n.render():r.on("render",n.render,n),n},createPopupFormPage:function(e){var r=rlx.mti;r.contentBox=r.createContentBox(e.content),r.actionBar=r.createActionBar(e.actionBar),e.helpCard&&(r.helpCard=r.createHelpCard(e.helpCard,r.contentBox)),rl.layoutBody({south:{iniSize:60,comp:r.actionBar},center:{comp:r.contentBox}})}})});

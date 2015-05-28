@@ -1,1 +1,0 @@
-orderjs.define("app.dataBox.plotFactories",["app.dataBox.KpiViewPlot","open.flot.jquery-flot"],function(){rl.dataBox.KpiViewPlot.addPlotFactory("flot",function(o,t,a){jQuery.plot("#"+o,t,a)})});
