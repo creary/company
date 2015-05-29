@@ -46,7 +46,6 @@ public class CmccPortalServlet extends HttpServlet {
 		log.debug("wlanuserip 参数 ："+wlanuserip);
 		log.debug("ssid 参数: "+ssid);
 		response.sendRedirect(request.getContextPath() + "/portal.jsp?ssid="+ssid+"&wlanacname="+wlanacname+"&wlanuserip="+wlanuserip);
-//		response.sendRedirect(request.getContextPath() + "/portal.jsp?parameter="+msgs);
 	}
 
 	/**
