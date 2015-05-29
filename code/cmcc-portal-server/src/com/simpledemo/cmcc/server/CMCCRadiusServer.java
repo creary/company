@@ -1,9 +1,11 @@
 package com.simpledemo.cmcc.server;
 import java.net.InetSocketAddress;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.spi.LoggerFactory;
 
+import com.radius.server.attribute.RadiusAttribute;
 import com.radius.server.packet.AccessRequest;
 import com.radius.server.packet.AccountingRequest;
 import com.radius.server.packet.RadiusPacket;
@@ -44,14 +46,18 @@ public class CMCCRadiusServer extends RadiusServer {
 	@Override
 	public RadiusPacket accessRequestReceived(AccessRequest accessRequest,
 			InetSocketAddress client) throws RadiusException {
+		
 		logger.debug(" 认证处理 accessRequestReceived()");
+		List<RadiusAttribute> list= accessRequest.getAttributes();
+		for (RadiusAttribute radiusAttribute : list) {
+			logger.debug(" RadiusAttribute 信息：" +radiusAttribute);
+		}
 		/*String password = getUserPassword(accessRequest.getUserName());
 		int type = RadiusPacket.ACCESS_REJECT;
 		if (password != null
 				&& accessRequest.verifyPassword(password)) {
 			type = RadiusPacket.ACCESS_ACCEPT;
 		}*/
-		
 		int type = RadiusPacket.ACCESS_ACCEPT;
 		RadiusPacket answer = new RadiusPacket(type, accessRequest.getPacketIdentifier());
 		copyProxyState(accessRequest, answer);
@@ -90,6 +96,9 @@ public class CMCCRadiusServer extends RadiusServer {
 		String inputdata = accountingRequest.getAttributeValue("Acct-Input-Octets");
 		String outputdata = accountingRequest.getAttributeValue("Acct-Output-Octets");
 		String sessiontime = accountingRequest.getAttributeValue("Acct-Session-Time");
+		
+		logger.debug("ipaddr"+ipaddr+":sessionid:"+sessionid+":acctStatusType:"+acctStatusType+":acip:"+acip+":mac:"+mac+":inputdata:"+inputdata+"outputdata\n"+outputdata);
+		logger.debug("sessiontime"+sessiontime);
 		return answer;
 	}
 	

@@ -28,7 +28,4 @@ public interface ICmccUser {
 	* @throws
 	 */
 	public void outUser(String user);
-	
-	
-
 }
