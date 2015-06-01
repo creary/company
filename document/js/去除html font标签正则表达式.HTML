@@ -1,0 +1,7 @@
+﻿<script>
+alert('<font size="5" face="d"><br/><strong>测试1</strong></font>sas<font size="5">测试2</font>'.replace(/<font[^>]*>/ig,"").replace(/<\/font>/ig,""));
+alert('<font size="5">测试1</font>sas<font size="5">测试2</font>'.replace(/<\/font>/ig,""));
+</script>
+var evt = document.createEvent('MouseEvents');  
+evt.initMouseEvent('click' , true , true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null) 
+document.getElementById('shortcutLink').dispatchEvent(evt);	
