@@ -71,7 +71,6 @@ public class CMCCRadiusServer extends RadiusServer {
 			// answer.addAttribute("Session-Timeout", "");
 			// 用户的闲置切断时间，以秒为单位
 			// answer.addAttribute("Idle-Timeout", "");
-			
 		}
 		return answer;
 	}
@@ -96,7 +95,6 @@ public class CMCCRadiusServer extends RadiusServer {
 		String inputdata = accountingRequest.getAttributeValue("Acct-Input-Octets");
 		String outputdata = accountingRequest.getAttributeValue("Acct-Output-Octets");
 		String sessiontime = accountingRequest.getAttributeValue("Acct-Session-Time");
-		
 		logger.debug("ipaddr"+ipaddr+":sessionid:"+sessionid+":acctStatusType:"+acctStatusType+":acip:"+acip+":mac:"+mac+":inputdata:"+inputdata+"outputdata\n"+outputdata);
 		logger.debug("sessiontime"+sessiontime);
 		return answer;
