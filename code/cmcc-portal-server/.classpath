@@ -11,8 +11,9 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-io-2.0.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-lang-2.4.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-logging-1.0.4.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/log4j-1.2.11.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/radius-server-1.0.jar" sourcepath="radius-doc/radius-server-1.0.src.zip"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/druid-1.0.9.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.7-bin.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/log4j-1.2.11.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
