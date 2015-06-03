@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <datasource name="ds_mysql_druid" type="com.wabacusdemo.util.DruidDataSourceUtil" dbtype="com.wabacus.config.database.type.MySql">
+                        <!-- 基本属性 url、user、password -->
+                        <property name="driver">com.mysql.jdbc.Driver</property>
+                        <property name="url"><![CDATA[jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8]]></property>  
+                        <property name="user">root</property>     
+                        <property name="password">ifdic2403</property>            
+                        <!-- 配置初始化大小、最小、最大 -->     
+                        <property name="initialSize">1</property>     
+                        <property name="minIdle">1</property>      
+                        <property name="maxActive">20</property>       
+                        <!-- 配置获取连接等待超时的时间 -->     
+                        <property name="maxWait">60000</property>       
+                        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->     
+                        <property name="timeBetweenEvictionRunsMillis">60000</property>       
+                        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->     
+                        <property name="minEvictableIdleTimeMillis">300000</property>        
+                        <property name="validationQuery">SELECT 'x'</property>     
+                        <property name="testWhileIdle">true</property>     
+                        <property name="testOnBorrow">false</property>     
+                        <property name="testOnReturn">false</property>       
+                        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->     
+                        <property name="poolPreparedStatements">false</property>     
+                        <property name="maxPoolPreparedStatementPerConnectionSize">20</property>
+
+                        <!--连接泄漏处理。Druid提供了RemoveAbandanded相关配置，用来关闭长时间不使用的连接。-->
+                        <property name="removeAbandoned">true</property> <!-- 打开removeAbandoned功能 -->     
+                        <property name="removeAbandonedTimeout">1800</property> <!-- 1800秒，也就是30分钟 -->     
+                        <property name="logAbandoned">true</property> <!-- 关闭abanded连接时输出错误日志 -->        
+                        <!-- 配置监控统计拦截的filters -->     
+                        <property name="filters">stat,wall</property><!--  -->
+                </datasource>
