@@ -28,4 +28,23 @@ public interface ICmccUser {
 	* @throws
 	 */
 	public void outUser(String user);
+	/**
+	 * 
+	* @Title: onlineNumber 
+	* @Description: TODO(查询用户的在线人数) 
+	* @param     设定文件 
+	* @return void    返回类型 
+	* @throws
+	 */
+	public void onlineNumber();
+	/**
+	 * 
+	* @Title: updateUserNumber 
+	* @Description: TODO(更新在线人数：请结合具体业务进行考虑) 
+	* @param     设定文件 
+	* @return void    返回类型 
+	* @throws
+	 */
+	public void updateUserNumber();
+	
 }

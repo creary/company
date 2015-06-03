@@ -24,5 +24,16 @@ public class CmccUserImpl implements ICmccUser {
 	public void outUser(String user) {
 		
 	}
+	/**
+	 * 用户在线人数
+	 */
+	@Override
+	public void onlineNumber() {
+		
+	}
+	@Override
+	public void updateUserNumber() {
+		
+	}
 
 }

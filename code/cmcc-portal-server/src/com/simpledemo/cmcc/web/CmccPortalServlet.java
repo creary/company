@@ -31,7 +31,6 @@ public class CmccPortalServlet extends HttpServlet {
 	public CmccPortalServlet() {
 		super();
 	}
-	
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		Logger log= Logger.getLogger(CmccPortalServlet.class);
@@ -47,7 +46,6 @@ public class CmccPortalServlet extends HttpServlet {
 		log.debug("ssid 参数: "+ssid);
 		response.sendRedirect(request.getContextPath() + "/portal.jsp?ssid="+ssid+"&wlanacname="+wlanacname+"&wlanuserip="+wlanuserip);
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
