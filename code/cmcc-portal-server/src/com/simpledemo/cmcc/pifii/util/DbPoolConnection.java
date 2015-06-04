@@ -38,10 +38,7 @@ public class DbPoolConnection {
     public DruidPooledConnection getConnection() throws SQLException {
         return dds.getConnection();
     }
-    
-   
     public static Properties loadPropertyFile(String fullFile) {
-    	
     	Properties p=new Properties();
     		try {
 				p.load(DbPoolConnection.class.getResourceAsStream(fullFile));
@@ -50,7 +47,6 @@ public class DbPoolConnection {
 				e.printStackTrace();
 			}
     		return p;
-    	
     	/*
         String webRootPath = null;
         if (null == fullFile || fullFile.equals(""))
@@ -81,5 +77,7 @@ public class DbPoolConnection {
             }
         }
         return p;
-    */}
+    */
+    		
+    		}
 }
