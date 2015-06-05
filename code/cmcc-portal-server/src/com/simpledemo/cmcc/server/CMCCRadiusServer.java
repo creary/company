@@ -1,5 +1,6 @@
 package com.simpledemo.cmcc.server;
 import java.net.InetSocketAddress;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -11,6 +12,7 @@ import com.radius.server.packet.AccountingRequest;
 import com.radius.server.packet.RadiusPacket;
 import com.radius.server.util.RadiusException;
 import com.radius.server.util.RadiusServer;
+import com.simpledemo.cmcc.pifii.dao.UserDAO;
 
 /**
  * CMCC Radius服务
@@ -51,7 +53,6 @@ public class CMCCRadiusServer extends RadiusServer {
 			logger.debug(" RadiusAttribute 信息：" +radiusAttribute);
 		}
 		//验证密码：
-		
 		/*String password = getUserPassword(accessRequest.getUserName());
 		int type = RadiusPacket.ACCESS_REJECT;
 		if (password != null
@@ -102,6 +103,17 @@ public class CMCCRadiusServer extends RadiusServer {
 		String sessiontime = accountingRequest.getAttributeValue("Acct-Session-Time");//用户的上线时间，以秒为单位
 		logger.debug("ipaddr"+ipaddr+":sessionid:"+sessionid+":acctStatusType:"+acctStatusType+":acip:"+acip+":mac:"+mac+":inputdata:"+inputdata+"outputdata\n"+outputdata);
 		logger.debug("sessiontime"+sessiontime);
+		try {
+			if(UserDAO.isThere(mac)){
+				 int num =(Integer) UserDAO.selectIsonLine(mac);
+				 UserDAO.updateIsonLine(mac, num+1);
+			}else {
+				UserDAO.insertNumber(mac);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			logger.error("accountingRequestReceived 错误  判断在线");
+		}
 		return answer;
 	}
 	

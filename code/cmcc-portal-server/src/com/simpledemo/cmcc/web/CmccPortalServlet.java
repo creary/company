@@ -77,13 +77,15 @@ public class CmccPortalServlet extends HttpServlet {
 			log.debug("处理结果"+result);
 			response.getWriter().print(result);
 			if (result == null) {
-				response.getWriter().print("OK");
+				response.sendRedirect("http://www.pifii.com");
+//				response.getWriter().print("OK");'
 				return;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			log.debug("异常"+e.getMessage());
 		}
-		response.getWriter().print("Error");
+		
+//		response.getWriter().print("Error");
 	}
 }
