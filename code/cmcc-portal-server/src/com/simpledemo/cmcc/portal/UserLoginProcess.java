@@ -20,7 +20,6 @@ public class UserLoginProcess extends AbstractProcess {
 		super(params);
 		logger.debug(" UserLoginProcess 登陆处理流程 ");
 	}
-	
 	@Override
 	protected Object process() throws Exception {
 		// 与AC握手，获取密码加密KEY
@@ -62,24 +61,27 @@ public class UserLoginProcess extends AbstractProcess {
 		if (super.isPrintDebugLog() && recpkg != null) {
 			recpkg.debug();
 		}
-		
 		if (recpkg != null 
 				&& recpkg.getCode() == Command.ACK_CHALLENGE 
 				&& recpkg.getId() == sendpkg.getId()) {
-			
 			//ErrCode＝0，表示AC设备告诉Portal Server请求Challenge成功；
 			//ErrCode＝1，表示AC设备告诉Portal Server请求Challenge被拒绝； 
 			//ErrCode＝2，表示AC设备告诉Portal Server此链接已建立；
 			//ErrCode＝3，表示AC设备告诉Portal Server有一个用户正在认证过程中，请稍后再试；
 			//ErrCode＝4，则表示AC设备告诉Portal Server此用户请求Challenge失败（发生错误）；
-			
-			logger.debug(" challgnge () 认证码 ："+recpkg.getCode());
+			logger.debug(" challgnge () 认证码 ："+recpkg.getCode()+"changeller()方法中： recpkg.getErrCode() "+recpkg.getErrCode());
 			if (recpkg.getErrCode() == 0) {
 				Object[] objects = new Object[3];
+				for (Object object : objects) {
+					logger.debug("changller() 中握手信息 ："+object); 
+				}
 				objects[0] = recpkg.getUserIPStr();
 				//objects[1] = recpkg.getBodyItemStr("Challenge");
 				objects[1] = recpkg.getBodyItemBytes("Challenge");
 				objects[2] = recpkg.getReqId();
+				logger.debug("recpkg.getUserIPStr()" +recpkg.getUserIPStr());
+				logger.debug("recpkg.getBodyItemBytes" +recpkg.getBodyItemBytes("Challenge"));
+				logger.debug(" recpkg.getReqId()" + recpkg.getReqId());
 				return objects;
 			} else if (recpkg.getErrCode() == 2) {
 				return new Object[]{"已经验证,不需要再验证"};
@@ -89,9 +91,10 @@ public class UserLoginProcess extends AbstractProcess {
 				return new Object[]{"用户请求Challenge失败（发生错误）"};
 			}
 		}
-		logger.warn("Challenge Fail: " + params.username);
+		logger.warn("Challenge Fail: " + params.username+":error code "+recpkg.getErrCode());
 		return new Object[]{"验证失败,请重新尝试"};
 	}
+	
 	/**
 	 * 通知AC到AAA认证
 	 * @param ip
@@ -131,11 +134,12 @@ public class UserLoginProcess extends AbstractProcess {
 			//ErrCode＝2，表示AC设备告诉Portal Server此链接已建立； 
 			//ErrCode＝3，表示AC设备告诉Portal Server有一个用户正在认证过程中，请稍后再试；
 			//ErrCode＝4 ，表示AC设备告诉Portal Server此用户认证失败（发生错误）；
-			logger.debug("认证码："+recpkg.getCode());
+			logger.debug("认证码："+recpkg.getCode()+": auth()方法: recpkg.getErrCode() "+recpkg.getErrCode());
 			if (recpkg.getErrCode() == 0) {
 				// 认证成功后，通知AC
 				return this.authOK(reqid, sendpkg.getId());
 			} else if (recpkg.getErrCode() == 2) {
+				
 				return "已经验证,不需要再验证";
 			} else if (recpkg.getErrCode() == 3) {
 				return "有一个用户正在认证过程中，请稍后再试";
@@ -143,9 +147,10 @@ public class UserLoginProcess extends AbstractProcess {
 				return "此用户认证失败";
 			}
 		}
-		logger.warn("Auth Fail: auth()  认证码 "+recpkg.getErrCode()+"主要认证参数username：" + params.username);
+		logger.info("Auth Fail: auth()  认证码 "+recpkg.getErrCode()+"主要认证参数username：" + params.username);
 		return "验证失败,请重新尝试";
 	}
+	
 	/**
 	 * 通知AC，认证成功，可以计费
 	 * @param reqid

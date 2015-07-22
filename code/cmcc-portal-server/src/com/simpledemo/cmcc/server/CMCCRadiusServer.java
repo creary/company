@@ -59,15 +59,25 @@ public class CMCCRadiusServer extends RadiusServer {
 				&& accessRequest.verifyPassword(password)) {
 			type = RadiusPacket.ACCESS_ACCEPT;
 		}*/
-		
 		int type = RadiusPacket.ACCESS_ACCEPT;
 		RadiusPacket answer = new RadiusPacket(type, accessRequest.getPacketIdentifier());
 		copyProxyState(accessRequest, answer);
+		String acip = accessRequest.getAttributeValue("NAS-IP-Address");//设备IP地址，如果RADIUS服务器组绑定了接口地址，则取绑定的接口地址，否则取发送报文的接口地址
+		logger.debug("accessRequestReceived()认证处理 ： acip "+acip);
 		answer.addAttribute("User-Name", accessRequest.getUserName());
 		// 配置实时计费信息采集的时间间隔,以秒为单位。
 		answer.addAttribute("Acct-Interim-Interval", String.valueOf(60));
 		if (type == RadiusPacket.ACCESS_ACCEPT) {
 			logger.debug("认证成功");
+			try {
+				String sessiontimeout=UserDAO.getOnlineTime(acip).toString();//分钟单位
+				Integer stime=Integer.parseInt(sessiontimeout)*60;
+				// 配置WLAN用户每次连接最长时间。超过该时长后，用户被切断。 以秒为单位
+				answer.addAttribute("Session-Timeout", stime.toString());
+			} catch (SQLException e) {
+				logger.error("认证时长设置 accessRequestReceived() "+e.getMessage());
+				e.printStackTrace();
+			}
 			// 认证成功
 			// 配置WLAN用户每次连接最长时间。超过该时长后，用户被切断。
 			// answer.addAttribute("Session-Timeout", "");
@@ -76,7 +86,6 @@ public class CMCCRadiusServer extends RadiusServer {
 		}
 		return answer;
 	}
-	
 	/**
 	 * 计费处理
 	 */
@@ -103,17 +112,33 @@ public class CMCCRadiusServer extends RadiusServer {
 		String sessiontime = accountingRequest.getAttributeValue("Acct-Session-Time");//用户的上线时间，以秒为单位
 		logger.debug("ipaddr"+ipaddr+":sessionid:"+sessionid+":acctStatusType:"+acctStatusType+":acip:"+acip+":mac:"+mac+":inputdata:"+inputdata+"outputdata\n"+outputdata);
 		logger.debug("sessiontime"+sessiontime);
+		//ac在线人数 ac等同于商铺进行处理
 		try {
 			if(UserDAO.isThere(mac)){
 				 int num =(Integer) UserDAO.selectIsonLine(mac);
 				 UserDAO.updateIsonLine(mac, num+1);
+				 logger.debug("跟新在线人数"+num+1);
 			}else {
 				UserDAO.insertNumber(mac);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			logger.error("accountingRequestReceived 错误  判断在线");
+			logger.error("accountingRequestReceived 错误  判断在线"+e.getMessage());
 		}
+		//在线时长
+	/*	Object shopDefaTime;
+		try {
+			shopDefaTime = UserDAO.getOnlineTime(acip);
+			Integer setime=Integer.parseInt(sessiontime);
+			Integer shopTime=Integer.parseInt(shopDefaTime.toString());
+			if(setime>=shopTime){
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			logger.error("获取用户时长错误"+e.getMessage());
+		}
+		*/
 		return answer;
 	}
 	

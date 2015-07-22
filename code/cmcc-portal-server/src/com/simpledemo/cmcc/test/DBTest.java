@@ -1,12 +1,8 @@
 package com.simpledemo.cmcc.test;
 
-import java.sql.Connection;
 import java.sql.SQLException;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import org.junit.Test;
 
@@ -26,7 +22,6 @@ public class DBTest {
 	* @return void    返回类型 
 	* @throws
 	 */
-	
 	@Test
 	public void testInsert(){
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -34,19 +29,19 @@ public class DBTest {
 		int ids=new Long(System.currentTimeMillis()).intValue();
 		String sql="insert into bp_device (id,mac,online_num,report_date) values ('"+ids+"','"+ids+"','1','"+sdf.format(new Date())+"')";
 		try {
-			DBUtilApache.update(conn.getConnection() , sql, null);
+			DBUtilApache.update(conn.getConnection(), sql, null);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
 	/**
 	 * 
 	* @Title: testSelect 
 	* @Description: TODO(这里用一句话描述这个方法的作用) 
 	* @param     设定文件 
 	* @return void    返回类型 
-	* @throws
+	* @throws	
 	 */
 	@Test
 	public void testSelect(){
@@ -55,11 +50,9 @@ public class DBTest {
 			Object[] ob=  DBUtilApache.queryArray(conn.getConnection() , sql, "015357ff59fcbfbc");
 			System.out.println(ob[0]);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}	
-	
 	
 	@Test
 	public void testUPdate(){
@@ -68,8 +61,21 @@ public class DBTest {
 		try {
 			DBUtilApache.update(conn.getConnection() , sql, new Object[]{12,DateUtil.getNow(),"015357ff59fcbfbc"});
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	* @Title: testDruid 
+	* @Description: TODO(研究测试druid数据库连接池性能) 
+	* @param     设定文件  junit测试
+	* @return void    返回类型  void 类型
+	* @throws Exception
+	 */
+	@Test
+	public void testDruid(){
+		
+				
+	}
+	
 }

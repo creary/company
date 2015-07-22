@@ -63,14 +63,13 @@ public class UserDAO {
 		boolean s=false;
 		int ids=new Long(System.currentTimeMillis()).intValue();
 		String sql="select online_num from bp_device where router_sn =? ";
-		List<Object[]> list=	DBUtilApache.queryArrayList(con.getConnection() , sql, mac);
+		List<Object[]> list=DBUtilApache.queryArrayList(con.getConnection() , sql, mac);
 		if(list.size()>0){
 			s=true;
 		}
 		return s;
 	}
 	/**
-	 * 
 	* @Title: updateIsonLine 
 	* @Description: TODO(跟新在线人数为传入的值) 
 	* @param @param mac
@@ -100,6 +99,28 @@ public class UserDAO {
 		Object[] ob=  DBUtilApache.queryArray(con.getConnection() , sql, router_sn);
 		return ob[0];
 	}
-	
+	/**
+	 * 
+	* @Title: selectIsonLine 
+	* @Description: TODO(查询指定用户的在线人数) 
+	* @param @param router_sn
+	* @param @return
+	* @param @throws SQLException    设定文件 
+	* @return Object    返回类型 
+	* @throws
+	 */
+	public static Object getOnlineTime(String ip) throws SQLException{
+		String sql="select bp_shop.time_out from bp_device inner join bp_shop on bp_shop.id=bp_device.shop_id where bp_device.ip =? ";
+		Object[] ob=  DBUtilApache.queryArray(con.getConnection() , sql, ip);
+		return ob[0];
+	}
+	public static void main(String[] args) {
+		try {
+			System.out.println(getOnlineTime("117.170.147.102"));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 }
